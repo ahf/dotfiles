@@ -1,0 +1,144 @@
+##
+## Muttrc for Alexander Færøy <ahf@0x90.dk>
+## vim: set ft=muttrc :
+##
+
+set mbox_type=Maildir
+set editor="vim '+/^$'"
+set postponed=~/.postponed
+set allow_8bit
+set beep_new
+set copy
+set edit_headers
+set mail_check=2
+set pager_context=6
+set pager_index_lines=7
+set shell=/bin/bash
+set sort=threads
+set sort_aux=date
+set sort_browser=alpha
+set sig_dashes
+set save_empty
+set tmpdir="/tmp"
+set charset="UTF-8"
+set send_charset="UTF-8"
+set recall=no
+set delete=yes
+set nomark_old
+set print_command="muttprint"
+set print="ask-yes"
+set signature=~/.signature
+set abort_unmodified=no
+set abort_nosubject=no
+set alias_file=~/.mutt/aliases
+set rfc2047_parameters
+set check_new
+set abort_nosubject=no
+set include=yes
+set sendmail="/usr/bin/nbsmtp"
+set folder="~/.mail"
+set mbox="~/.mail/inbox/"
+set spoolfile="~/.mail/inbox/"
+set record="~/.mail/Sent/"
+unset use_domain
+
+hdr_order From: To Cc Bcc Subject Date User-Agent
+
+#my_hdr From: Alexander Færøy <ahf@0x90.dk>
+
+folder-hook "Sent" set sort=date-received
+folder-hook !"Sent" set sort=threads
+
+folder-hook !"exherbo-*" my_hdr From: Alexander Færøy <ahf@0x90.dk>
+folder-hook "exherbo-*" my_hdr From: Alexander Færøy <ahf@exherbo.org>
+
+macro pager G "!~/.mailget\r"
+macro index G "!~/.mailget\r"
+
+mailboxes !
+
+mailboxes =inbox/
+mailboxes =misc/ripe/
+mailboxes =misc/facebook/
+mailboxes =misc/trafficreport/
+
+mailboxes =lists/ubuntu/ubuntu-dk
+mailboxes =lists/exherbo/exherbo-dev
+#mailboxes =lists/exherbo/exherbo-commits
+#
+mailboxes =lists/ircd/ratbox/
+
+mailboxes =lists/paludis/paludis-user
+mailboxes =lists/paludis/paludis-sekrit
+
+mailboxes =lists/xorg/xorg-announce
+
+mailboxes =lists/gentoo/gentoo-dev
+
+mailboxes =lists/xen/xen-announce
+mailboxes =lists/xen/xense-devel
+mailboxes =lists/xen/xen-ia64-devel
+mailboxes =lists/xen/xen-devel
+mailboxes =lists/xen/xen-research
+
+mailboxes =lists/gentoo/gentoo-announce
+mailboxes =lists/gentoo/gentoo-mips
+mailboxes =lists/gentoo/gentoo-ia64
+
+ignore *
+unignore from: subject to cc bcc date user-agent X-Mailer X-Spam-Level
+
+alternative_order text/plain text
+auto_view text/enciched text/x-vcard text/html application/msword
+
+set quote_regexp="^( {0,4}[>|:]| {0,4}[a-z0-9]+[>|]+)+"
+set reply_regexp="^((re|RE|Re|r e|sv|SV|Sv):[ \t*)+"
+
+color   attachment  color38 color80
+color   header      color10 color80 "^(From|Subject|cc|date|To|X-Spam-Level|User-Agent|X-Mailer):"
+color   signature   color39 color80
+color   tree        color39 color80
+color   message     color26 color80
+color   status      color85 color81
+color   normal      color78 color80
+color   error       color79 color64
+color   indicator   color80 color73
+color   markers     color26 color80
+color   index       color64 color80 ~D
+color   index       color64 color80 ~F
+color   index       color30 color80 ~T
+color   tilde       color39 color80
+
+color   body        color10 color80 "(http|https|ftp|news|telnet|finger|irc)://[^ \">\t\r\n]*"
+color   body        color10 color80 "mailto:[-a-z_0-9.]+@[-a-z_0-9.]+"
+color   body        color26 color80 "[;:=][-][)/(|]"
+
+color   quoted      color52 color80
+color   quoted1     color22 color80
+color   quoted2     color71 color80
+
+set status_format="─[ Messages: %n/%m ( %f ) ]─[ Sort: %s/%S ]─[ %P ]"
+set alias_format=" %a ):    %r  %t"
+set folder_format="%u:%g - %d:  %f %N"
+set forward_format="Fw: %s"
+
+set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
+set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --passphrase-fd 0 --no-verbose --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --output - --passphrase-fd 0 --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="/usr/bin/pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0xECE43656 -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/bin/pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0xECE43656 -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import -v %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --no-verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --with-colons --list-secret-keys %r"
+set pgp_autosign=yes
+set pgp_auto_decode=yes
+set pgp_sign_as=0xECE43656
+set pgp_replyencrypt=yes
+set pgp_timeout=600
+set pgp_good_sign="^gpg: Good signature from"
+set pgp_use_gpg_agent=no
+set pgp_strict_enc=no

@@ -1,0 +1,32 @@
+!!
+!! Cursor theme
+!!
+Xcursor.theme: Vanilla-DMZ
+
+!!
+!! rxvt-unicode
+!!
+URxvt*transparent:false
+URxvt*tintColor:green
+URxvt*saveLines:12000
+URxvt*foreground:Grey
+URxvt*background:Black
+URxvt*font: xft:Terminus:pixelsize=10
+URxvt*scrollBar:false
+URxvt*scrollBar_right:false
+URxvt*scrollstyle:rxvt
+URxvt.perl-ext-common: default,matcher
+URxvt.urlLauncher: firefox3
+URxvt.matcher.button: 2
+URxvt.matcher.pattern.1: \\bwww\\.[\\w-]\\.[\\w./?&@#-]*[\\w/-]
+
+!!
+!! uxterm
+!!
+#UXTerm*foreground: #cccccc
+#UXTerm*background: #000000
+UXTerm*Background: darkslategrey
+UXTerm*Foreground: wheat
+UXTerm*pointerColor: cyan
+UXTerm*loginShell: true
+
