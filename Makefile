@@ -1,5 +1,7 @@
 TARGET   ?= $(HOME)
-PACKAGES ?= git
+PACKAGES ?= \
+			git \
+			gnupg
 
 all: init stow
 
