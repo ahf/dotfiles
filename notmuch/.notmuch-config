@@ -1,0 +1,20 @@
+[database]
+path=/home/user/.mail/accounts/
+
+[user]
+name=Alexander Færøy
+primary_email=ahf@0x90.dk
+other_email=ahf@torproject.org;ahf@irssi.org;ahf@bornhack.org;ahfaeroey@riseup.net;
+
+[new]
+tags=unread;
+ignore=
+
+[search]
+exclude_tags=trash;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg2
