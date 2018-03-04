@@ -1,0 +1,8 @@
+! Map the Caps Lock button as Level3 Shift.
+clear lock
+keycode 66 = Mode_switch ISO_Level3_Shift
+
+! Allows me to use weird Danish characters with my US keyboard.
+keycode 38 = a A aring Aring
+keycode 32 = o O oslash Oslash
+keycode 48 = apostrophe quotedbl ae AE

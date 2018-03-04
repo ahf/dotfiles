@@ -1,7 +1,8 @@
 TARGET   ?= $(HOME)
 PACKAGES ?= \
-			git \
-			gnupg
+			git     \
+			gnupg   \
+			xmodmap \
 
 all: init stow
 
