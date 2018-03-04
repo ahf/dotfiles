@@ -1,0 +1,2 @@
+# This file exists because `.gitignore` is in Stow's internal ignore list, but
+# we need it for our Git configuraiton.

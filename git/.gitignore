@@ -1,0 +1,12 @@
+#
+# Alexander Færøy <ahf@0x90.dk>
+# PGP: 0x61A208E16E7CB435
+#
+# Git Ignore Configuration File.
+#
+# Most recent update: Sun Feb 19 17:46:10 2017
+#
+
+# Ignore Vim swap files.
+*.sw*
+*~
