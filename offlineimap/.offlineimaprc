@@ -1,0 +1,126 @@
+[general]
+ui = ttyui
+accounts = riseup, 0x90, bornhack
+pythonfile = ~/.mail/scripts/offlineimap.py
+maxsyncaccounts = 5
+socktimeout = 120
+
+[mbnames]
+enabled = yes
+filename = ~/.mail/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+folderfilter = lambda a, f: (a, f) not in [('0x90', 'spam'),
+                                           ('0x90', 'trash'),
+                                           ('riseup', 'spam'),
+                                           ('riseup', 'trash')]
+
+[Account riseup]
+autorefresh = 10
+localrepository = riseup-local
+remoterepository = riseup-remote
+postsynchook = ~/.mail/scripts/post-sync-hook.bash
+
+[Repository riseup-local]
+type = Maildir
+localfolders = ~/.mail/accounts/riseup
+sep = /
+nametrans = lambda f: {'inbox':   'INBOX',
+                       'sent':    'Sent',
+                       'archive': 'Archive',
+                       'trash':   'Trash',
+                       'drafts':  'Drafts',
+                       'spam':    'Spam',
+                      }.get(f, f)
+
+[Repository riseup-remote]
+type = IMAP
+ssl = yes
+remotehost = 5gdvpfoh6kb2iqbizb37lzk2ddzrwa47m6rpdueg2m656fovmbhoptqd.onion
+remoteport = 993
+remoteuser = ahfaeroey@riseup.net
+remotepasseval = get_password('email/ahfaeroey@riseup.net')
+cert_fingerprint = 92471a2f5f1082cc2752f308e0c5631a43f14af3
+maxconnections = 3
+folderfilter = lambda f: f not in []
+nametrans = lambda f: {'INBOX':   'inbox',
+                       'Sent':    'sent',
+                       'Archive': 'archive',
+                       'Trash':   'trash',
+                       'Drafts':  'drafts',
+                       'Spam':    'spam',
+                      }.get(f, f)
+
+[Account 0x90]
+autorefresh = 10
+localrepository = 0x90-local
+remoterepository = 0x90-remote
+postsynchook = ~/.mail/scripts/post-sync-hook.bash
+
+[Repository 0x90-local]
+type = Maildir
+localfolders = ~/.mail/accounts/0x90
+sep = /
+nametrans = lambda f: {'inbox':   'INBOX',
+                       'drafts':  '[Google Mail]/Drafts',
+                       'sent':    '[Google Mail]/Sent Mail',
+                       'starred': '[Google Mail]/Starred',
+                       'trash':   '[Google Mail]/Bin',
+                       'spam':    '[Google Mail]/Spam',
+                       'archive': '[Google Mail]/All Mail',
+                      }.get(f, f)
+
+[Repository 0x90-remote]
+type = Gmail
+auth_mechanisms = PLAIN
+remoteuser = ahf@0x90.dk
+remotepasseval = get_password('email/ahf@0x90.dk')
+maxconnections = 3
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+realdelete = no
+folderfilter = lambda f: f not in []
+nametrans = lambda f: {'INBOX':                   'inbox',
+                       '[Google Mail]/Drafts':    'drafts',
+                       '[Google Mail]/Sent Mail': 'sent',
+                       '[Google Mail]/Starred':   'starred',
+                       '[Google Mail]/Bin':       'trash',
+                       '[Google Mail]/Spam':      'spam',
+                       '[Google Mail]/All Mail':  'archive',
+                      }.get(f, f)
+
+[Account bornhack]
+autorefresh = 10
+localrepository = bornhack-local
+remoterepository = bornhack-remote
+postsynchook = ~/.mail/scripts/post-sync-hook.bash
+
+[Repository bornhack-local]
+type = Maildir
+localfolders = ~/.mail/accounts/bornhack
+sep = /
+nametrans = lambda f: {'inbox':   'INBOX',
+                       'sent':    'Sent',
+                       'archive': 'Archives',
+                       'trash':   'Trash',
+                       'drafts':  'Drafts',
+                      }.get(f, f)
+
+[Repository bornhack-remote]
+type = IMAP
+ssl = yes
+remotehost = imap.bornhack.org
+remoteport = 993
+remoteuser = ahf@bornhack.org
+remotepasseval = get_password('email/ahf@bornhack.org')
+auth_mechanisms = PLAIN
+maxconnections = 3
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda f: f not in []
+nametrans = lambda f: {'INBOX':    'inbox',
+                       'Sent':     'sent',
+                       'Archives': 'archive',
+                       'Trash':    'trash',
+                       'Drafts':   'drafts',
+                      }.get(f, f)
