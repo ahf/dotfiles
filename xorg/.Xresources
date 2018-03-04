@@ -1,0 +1,39 @@
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,colorscheme,-selection-popup,-option-popup
+URxvt.scrollstyle: plain
+URxvt.scrollBar: false
+URxvt.visualBell: false
+URxvt.letterSpace: -1
+URxvt.font:     xft:Inconsolata:SemiBold:pixelsize=12:antialias=true:hinting=true
+URxvt.boldFont: xft:Inconsolata:Bold:pixelsize=12:antialias=true:hinting=true
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.insecure: false
+
+! These are only used in case the Solarized theme isn't loaded using the
+! `colorscheme` extension.
+URxvt.background: #030403
+URxvt.foreground: #9aff9a
+
+! The `resize-font` extension.
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-equal
+URxvt.resize-font.reset: C-0
+URxvt.resize-font.show: C-question
+
+! The `matcher` extension: open URL's with Qubes' qvm-open-in-dvm.
+URxvt.url-launcher: /usr/bin/qvm-open-in-dvm
+URxvt.matcher.button: 3
+URxvt.matcher.rend.0: -Uline fg4
+
+! The `searchable-scrollback` extension: Search the scrollback using ctrl+f.
+URxvt.searchable-scrollback: C-f
+
+! The `colorscheme` extension: toggle between solarized light and dark using
+! Win+c.
+URxvt.keysym.Mod4-c: perl:colorscheme:toggle
