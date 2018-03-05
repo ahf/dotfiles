@@ -2,6 +2,7 @@ TARGET   ?= $(HOME)
 PACKAGES ?= \
 			git     \
 			gnupg   \
+			tmux    \
 			xorg    \
 
 all: init stow
