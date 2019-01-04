@@ -1,0 +1,120 @@
+set folder = "~/.mail/accounts"
+source ~/.mail/mailboxes
+
+set spoolfile = "+0x90/inbox"
+
+set mail_check_stats
+
+set sidebar_visible=no
+set sidebar_short_path
+set sidebar_delim_chars="/"
+set sidebar_folder_indent
+set sidebar_indent_string=" "
+set sidebar_new_mail_only=no
+
+set alias_file = ~/.mutt/alias
+set certificate_file = ~/.mutt/certificates
+set tmpdir = ~/.mutt/temp
+
+# Don't ask if we should quit.
+bind index q noop
+bind index x noop
+
+#set wrap=78
+
+# Set my name
+set realname = "Alexander Færøy"
+
+# Prepend our signature with "-- \n".
+set sig_dashes
+
+# Our signature.
+set signature=~/.mutt/signature
+
+# Allow us to edit headers when writing an email.
+set edit_headers
+
+# Use vim as editor and go to the first empty line.
+set editor="vim '+/^$'"
+
+# Enable the header cache.
+set header_cache = ~/.mutt/cache/headers
+
+# Enable the message cache.
+set message_cachedir = ~/.mutt/cache/bodies
+
+# Don't auto-enable S/MIME support.
+set crypt_autosmime=no
+
+set pager_index_lines = 10
+set pager_context = 5
+set pager_stop
+set menu_scroll
+set tilde=yes
+
+# Don't display "+" markers for mailboxes.
+unset markers
+
+# Don't include that we are using Mutt in every message.
+set user_agent=no
+
+# Hide host details.
+set hidden_host
+
+# Our terminal should be UTF-8 always, but our locale might not be configured
+# correctly.
+set charset = "utf-8"
+
+# US ASCII > ISO-8859-1 > UTF-8 in the mail world :-(
+set send_charset = "us-ascii:iso-8859-1:utf-8"
+
+# Our hostname (or the value on /etc/mailname) is leaked as part of the
+# Message-ID calculation. Hide this detail.
+set hostname = localhost
+
+set delete=yes
+
+# NM
+bind index,pager X vfolder-from-query
+bind index,pager x change-vfolder
+bind index <Esc>s sidebar-toggle-virtual
+
+virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
+virtual-mailboxes "tor" "notmuch://?query=tag:tor"
+virtual-mailboxes "bornhack" "notmuch://?query=tag:bornhack"
+
+#set virtual_spoolfile=yes
+
+set nm_query_type = messages
+
+alternative_order text/plain text/enriched text/html
+
+auto_view text/html
+
+#set reverse_name=yes
+#alternates ^ahf@0x90.dk$ ^ahf@torproject.org$ ^ahf@bornhack.org$
+
+# Load our default account configuration.
+source ~/.mutt/accounts/0x90
+
+# Try to figure out which email address to send from, which SMTP server to use, etc.
+#  We start by looking at which folder we are in.
+folder-hook 0x90/*     source ~/.mutt/accounts/0x90
+folder-hook riseup/*   source ~/.mutt/accounts/riseup
+folder-hook bornhack/* source ~/.mutt/accounts/bornhack
+#  We try to see if the email was sent to a commonly used address.
+reply-hook "~C ahf@0x90.dk" source ~/.mutt/accounts/0x90
+reply-hook "~C ahf@torproject.org" source ~/.mutt/accounts/riseup
+reply-hook "~C ahf@bornhack.org" source ~/.mutt/accounts/bornhack
+#  We try to see, when replying, if we can detect which account it was delivered to.
+reply-hook '~h "Delivered-To: ahf@0x90.dk"' source ~/.mutt/accounts/0x90
+reply-hook '~h "Delivered-To: ahfaeroey@riseup.net"' source ~/.mutt/accounts/riseup
+reply-hook '~h "Delivered-To: ahf@bornhack.org"' source ~/.mutt/accounts/bornhack
+
+set pgp_auto_decode=yes
+
+set smime_verify_command=""
+set smime_verify_opaque_command=""
+set smime_decrypt_command=""
+
+source ~/.mutt/theme

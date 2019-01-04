@@ -1,0 +1,6 @@
+set from = ahf@bornhack.org
+set sendmail = "/usr/bin/msmtp -a bornhack"
+set record = "=bornhack/sent"
+set postponed = "=bornhack/drafts"
+
+# vim: set ft=muttrc :

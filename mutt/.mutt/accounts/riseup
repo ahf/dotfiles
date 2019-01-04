@@ -1,0 +1,6 @@
+set from = ahf@torproject.org
+set sendmail = "/usr/bin/msmtp -a riseup"
+set record = "=riseup/sent"
+set postponed = "=riseup/drafts"
+
+# vim: set ft=muttrc :

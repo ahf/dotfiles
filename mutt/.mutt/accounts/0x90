@@ -1,0 +1,6 @@
+set from = ahf@0x90.dk
+set sendmail = "/usr/bin/msmtp -a 0x90"
+set record = "=0x90/sent"
+set postponed = "=0x90/drafts"
+
+# vim: set ft=muttrc :

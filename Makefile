@@ -2,6 +2,7 @@ TARGET   ?= $(HOME)
 PACKAGES ?= \
 			git     \
 			gnupg   \
+			mutt    \
 			tmux    \
 			xorg    \
 
