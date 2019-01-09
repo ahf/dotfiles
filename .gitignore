@@ -1,0 +1,6 @@
+*.pyc
+
+# Mail logs, account inboxes, and mutt's temp directory.
+mail/.mail/*.log
+mail/.mail/accounts/
+mail/.mutt/temp/
