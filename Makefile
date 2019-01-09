@@ -3,6 +3,7 @@ PACKAGES ?= \
 			git     \
 			gnupg   \
 			mutt    \
+			npm     \
 			tmux    \
 			xorg    \
 
