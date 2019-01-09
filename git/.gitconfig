@@ -4,7 +4,7 @@
 #
 # Git Configuration File.
 #
-# Most recent update: Sun 04 Mar 2018 02:40:31 AM CET
+# Most recent update: Wed 09 Jan 2019 06:13:07 AM CET
 #
 
 [user]
@@ -24,6 +24,7 @@
 [diff]
     renames = copy
     tool = vimdiff
+    colorMoved = zebra
 
 [difftool]
     prompt = false
