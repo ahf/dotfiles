@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-if [[ -x ~/.notmuch/post-sync-hook.bash ]] ; then
-    ~/.notmuch/post-sync-hook.bash
+if [[ -x ~/.mail/scripts/notmuch-post-sync-hook.bash ]] ; then
+    ~/.mail/scripts/notmuch-post-sync-hook.bash
 fi
