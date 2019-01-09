@@ -4,3 +4,11 @@
 mail/.mail/*.log
 mail/.mail/accounts/
 mail/.mutt/temp/
+
+# GnuPG related files.
+gnupg/.gnupg/crls.d/
+gnupg/.gnupg/private-keys-v1.d/
+gnupg/.gnupg/pubring.kbx
+gnupg/.gnupg/random_seed
+gnupg/.gnupg/tofu.db
+gnupg/.gnupg/trustdb.gpg
