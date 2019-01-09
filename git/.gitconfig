@@ -4,7 +4,7 @@
 #
 # Git Configuration File.
 #
-# Most recent update: Wed 09 Jan 2019 06:13:07 AM CET
+# Most recent update: Wed 09 Jan 2019 07:07:32 PM CET
 #
 
 [user]
@@ -40,3 +40,8 @@
 
 [fetch]
     fsckobjects = true
+
+[sendemail]
+    from = Alexander Færøy <ahf@0x90.dk>
+    smtpserver = /usr/bin/msmtp
+    confirm = auto
