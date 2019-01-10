@@ -1,0 +1,60 @@
+[submodule "vim/.vim/pack/ahf/start/vim-gitgutter"]
+	path = vim/.vim/pack/ahf/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/.vim/pack/ahf/start/ctrlp"]
+	path = vim/.vim/pack/ahf/start/ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/.vim/pack/ahf/start/fugitive"]
+	path = vim/.vim/pack/ahf/start/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/.vim/pack/ahf/start/solarized"]
+	path = vim/.vim/pack/ahf/start/solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "vim/.vim/pack/ahf/start/inkpot"]
+	path = vim/.vim/pack/ahf/start/inkpot
+	url = https://github.com/ciaranm/inkpot.git
+[submodule "vim/.vim/pack/ahf/start/securemodelines"]
+	path = vim/.vim/pack/ahf/start/securemodelines
+	url = https://github.com/ciaranm/securemodelines.git
+[submodule "vim/.vim/pack/ahf/start/rust"]
+	path = vim/.vim/pack/ahf/start/rust
+	url = https://github.com/rust-lang/rust.vim.git
+[submodule "vim/.vim/pack/ahf/start/vim-erlang-runtime"]
+	path = vim/.vim/pack/ahf/start/vim-erlang-runtime
+	url = https://github.com/vim-erlang/vim-erlang-runtime.git
+[submodule "vim/.vim/pack/ahf/start/vim-erlang-compiler"]
+	path = vim/.vim/pack/ahf/start/vim-erlang-compiler
+	url = https://github.com/vim-erlang/vim-erlang-compiler.git
+[submodule "vim/.vim/pack/ahf/start/vim-erlang-omnicomplete"]
+	path = vim/.vim/pack/ahf/start/vim-erlang-omnicomplete
+	url = https://github.com/vim-erlang/vim-erlang-omnicomplete.git
+[submodule "vim/.vim/pack/ahf/start/vim-erlang-tags"]
+	path = vim/.vim/pack/ahf/start/vim-erlang-tags
+	url = https://github.com/vim-erlang/vim-erlang-tags.git
+[submodule "vim/.vim/pack/ahf/start/vim-elixir"]
+	path = vim/.vim/pack/ahf/start/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule "vim/.vim/pack/ahf/start/go"]
+	path = vim/.vim/pack/ahf/start/go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vim/.vim/pack/ahf/start/syntastic"]
+	path = vim/.vim/pack/ahf/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/.vim/pack/ahf/start/supertab"]
+	path = vim/.vim/pack/ahf/start/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/.vim/pack/ahf/start/buftabline"]
+	path = vim/.vim/pack/ahf/start/buftabline
+	url = https://github.com/ap/vim-buftabline.git
+[submodule "vim/.vim/pack/ahf/start/cocci-syntax"]
+	path = vim/.vim/pack/ahf/start/cocci-syntax
+	url = https://github.com/ahf/cocci-syntax.git
+[submodule "vim/.vim/pack/ahf/start/twelf-syntax"]
+	path = vim/.vim/pack/ahf/start/twelf-syntax
+	url = https://github.com/ahf/twelf-syntax.git
+[submodule "vim/.vim/pack/ahf/start/onion-vim"]
+	path = vim/.vim/pack/ahf/start/onion-vim
+	url = https://github.com/ahf/onion-vim.git
+[submodule "vim/.vim/pack/ahf/start/vim-reason-plus"]
+	path = vim/.vim/pack/ahf/start/vim-reason-plus
+	url = https://github.com/reasonml-editor/vim-reason-plus.git

@@ -5,6 +5,7 @@ PACKAGES ?= \
 			mutt    \
 			npm     \
 			tmux    \
+			vim     \
 			xorg    \
 
 all: init stow

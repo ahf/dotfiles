@@ -1,0 +1,28 @@
+"
+" Alexander Færøy <ahf@0x90.dk>
+" PGP: 0x61A208E16E7CB435
+"
+" Vim Pager Configuration File.
+"
+" Most recent update: Sun Feb 19 17:41:49 2017
+"
+
+" Load our normal Vim configuration.
+source ~/.vimrc
+
+" Never show status line.
+set laststatus=0
+
+" Enable the ruler.
+set ruler
+
+" Manual folding method.
+set foldmethod=manual
+
+" Maximum of 99 fold levels.
+set foldlevel=99
+
+" Disable lists.
+set nolist
+
+" vim: set ft=vim sw=4 sts=4 et tw=72 :
