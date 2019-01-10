@@ -1,5 +1,6 @@
 TARGET   ?= $(HOME)
 PACKAGES ?= \
+			gdb     \
 			git     \
 			gnupg   \
 			mutt    \
