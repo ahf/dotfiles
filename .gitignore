@@ -10,5 +10,6 @@ gnupg/.gnupg/crls.d/
 gnupg/.gnupg/private-keys-v1.d/
 gnupg/.gnupg/pubring.kbx
 gnupg/.gnupg/random_seed
+gnupg/.gnupg/sshcontrol
 gnupg/.gnupg/tofu.db
 gnupg/.gnupg/trustdb.gpg
