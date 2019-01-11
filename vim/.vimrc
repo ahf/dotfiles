@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: Fri 11 Jan 2019 09:36:53 PM CET
+" Most recent update: 2019/01/11 22:28:28
 "
 
 " I use my name and email for various things throughout the
@@ -71,6 +71,15 @@ set report=0
 " Execute all macros before updating the screen.
 set lazyredraw
 
+" New vertically split windows goes to the right of the current window.
+set splitright
+
+" New horizontally split windows goes below of the current window.
+set splitbelow
+
+" Do not add an additional space after '.', '?', and '!' when joining.
+set nojoinspaces
+
 " Disable modeline-support and use Ciaran's securemodelines plug-in
 " instead.
 set nomodeline
@@ -81,27 +90,61 @@ let g:secure_modelines_modelines = 15
 " Enable the wild menu.
 set wildmenu
 set wildignore+=*.o,*~
+set wildmode=list:longest,full
+
+" Show results as you type your search query.
+set incsearch
+
+" Search queries are case insensitive.
+set ignorecase
+
+" Search becomes case sensitive if you have an upper case character in
+" your search query.
+set smartcase
 
 " Always show status line.
-set laststatus=2
+if has('statusline')
+    set laststatus=2
 
-" Let's enable syntax coloring support, but only if Vim is compiled with
-" support for it.
-if has("syntax")
-    " Enable syntax coloring.
-    syntax on
-    set syntax=on
+    set statusline=%<%n\ [%f]
+    set statusline+=\ [%w%M%H%R%Y]
+    set statusline+=\ [%{substitute(getcwd(),\ $HOME,\ '~',\ '')}]
+    set statusline+=\ [%{fugitive#head()}]
+    set statusline+=%=%-10.(%l,%c%V%)\ %p%%
+endif
 
-    " Enable syntax coloring when printing.
-    if has("printer")
-        set printoptions+=syntax:y
-    endif
+" Use persistent undo, if it's available.
+if has('persistent_undo')
+    " Set the undo directory.
+    set undodir=~/.vim/undo/
+
+    " Enable undo file.
+    set undofile
+
+    " The max. number of changes that can be undone.
+    set undolevels=1000
+
+    " The max. number of lines to save for undo when the buffer is
+    " reloaded.
+    set undoreload=10000
 endif
 
 " Enable file-type detection, plug-ins, and auto-indentation.
 filetype on
 filetype indent on
 filetype plugin on
+
+" Let's enable syntax coloring support, but only if Vim is compiled with
+" support for it.
+if has("syntax")
+    " Enable syntax coloring.
+    syntax on
+
+    " Enable syntax coloring when printing.
+    if has("printer")
+        set printoptions+=syntax:y
+    endif
+endif
 
 " Visualise tabs, trailing spaces, line extensions (wrapped lines), and
 " non-breakable space characters. We keep a variant for both terminals
@@ -136,12 +179,15 @@ if has("gui_running")
     " window.
     set guioptions-=R
 
+    " Enable mouse support.
+    set mouse=a
+
     " Use popup as mouse-model. See :help mousemodel for an
     " explanation.
     set mousemodel=popup
 
     " Use Inconsolata as font.
-    set guifont=Inconsolata
+    set guifont=Inconsolata\ 14
 endif
 
 " Function that allows us to specify a set of files where we want
@@ -149,7 +195,7 @@ endif
 function! <SID>UpdateHeaderTimestamp()
     let l:c=col(".")
     let l:l=line(".")
-    1,10s-\(Most recent update:\).*-\="Most recent update: ".strftime("%c")-e
+    1,10s-\(Most recent update:\).*-\="Most recent update: ".strftime("%Y/%m/%d %H:%M:%S")-e
     call cursor(l:l, l:c)
 endfunction
 
@@ -263,6 +309,9 @@ autocmd BufRead COMMIT_EDITMSG setlocal nobackup
 
 " Enable spell checking and textwidth for emails.
 autocmd FileType mail setlocal nohlsearch spell textwidth=72 formatoptions+=t
+
+" Remove a comment leader when joining lines
+set formatoptions+=j
 
 " Don't force #'s to be at column 0.
 inoremap # X<BS>#
