@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2019/01/11 23:59:08
+" Most recent update: 2019/01/12 00:07:55
 "
 
 " I use my name and email for various things throughout the
@@ -101,6 +101,10 @@ set ignorecase
 " Search becomes case sensitive if you have an upper case character in
 " your search query.
 set smartcase
+
+" Show a bit of context when scrolling if possible.
+set scrolloff=3
+set sidescrolloff=3
 
 " Always show status line.
 if has('statusline')
