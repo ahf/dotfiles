@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: Thu 10 Jan 2019 06:37:21 AM CET
+" Most recent update: Fri 11 Jan 2019 09:36:53 PM CET
 "
 
 " I use my name and email for various things throughout the
@@ -186,9 +186,6 @@ try
 catch
 endtry
 
-" When entering a new file, always disable hlsearch.
-autocmd VimEnter * nohlsearch
-
 " Switch between header and source files.
 let g:switch_header_map = {
             \ 'c':     'h',
@@ -273,7 +270,7 @@ inoremap # X<BS>#
 " Make Ctrl+t open a new tab.
 nmap <C-t> :tabnew<cr>
 
-" Disable any previous highlights.
+" When entering a new file, always disable hlsearch.
 au VimEnter * nohlsearch
 
 " vim: set sw=4 sts=4 et tw=72 :
