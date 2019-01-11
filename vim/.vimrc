@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2019/01/12 00:15:29
+" Most recent update: 2019/01/12 00:16:33
 "
 
 " I use my name and email for various things throughout the
@@ -325,6 +325,9 @@ endfunction
 
 autocmd FileType help :call <SID>WindowToTop()
 autocmd FileType help nmap <buffer> <Return> <C-]>
+
+" Sync syntax for new buffers.
+autocmd BufEnter * syntax sync fromstart
 
 " Enable spell checking and textwidth for emails.
 autocmd FileType mail setlocal nohlsearch spell textwidth=72 formatoptions+=t
