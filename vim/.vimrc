@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2019/01/12 00:07:55
+" Most recent update: 2019/01/12 00:15:29
 "
 
 " I use my name and email for various things throughout the
@@ -314,6 +314,17 @@ set background=dark
 " Disable backup of SCM commit message files.
 autocmd BufRead svn-commit.tmp setlocal nobackup
 autocmd BufRead COMMIT_EDITMSG setlocal nobackup
+
+" Always keep the help window on the top and make <Return> jump to the
+" tag under the cursor.
+function! <SID>WindowToTop()
+    let l:height = winheight(0)
+    wincmd K
+    execute "resize" l:height
+endfunction
+
+autocmd FileType help :call <SID>WindowToTop()
+autocmd FileType help nmap <buffer> <Return> <C-]>
 
 " Enable spell checking and textwidth for emails.
 autocmd FileType mail setlocal nohlsearch spell textwidth=72 formatoptions+=t
