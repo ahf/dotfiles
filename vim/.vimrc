@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2019/01/11 22:28:28
+" Most recent update: 2019/01/11 23:59:08
 "
 
 " I use my name and email for various things throughout the
@@ -187,7 +187,11 @@ if has("gui_running")
     set mousemodel=popup
 
     " Use Inconsolata as font.
-    set guifont=Inconsolata\ 14
+    if hostname() == "hathor"
+        set guifont=Inconsolata\ 16
+    else
+        set guifont=Inconsolata\ 14
+    endif
 endif
 
 " Function that allows us to specify a set of files where we want
