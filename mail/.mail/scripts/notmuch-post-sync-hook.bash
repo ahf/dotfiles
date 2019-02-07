@@ -32,6 +32,8 @@ notmuch tag +tor +tor-talk -- folder:riseup/lists/tor/tor-talk
 notmuch tag +tor +tor-teachers -- folder:riseup/lists/tor/tor-teachers
 notmuch tag +tor +tor-team -- folder:riseup/lists/tor/tor-team
 notmuch tag +tor +tor-bsd -- folder:riseup/lists/tor/tor-bsd
+notmuch tag +tor +tor-researchers -- folder:riseup/lists/tor/tor-researchers
+notmuch tag +tor +guardianproject-pluto -- folder:riseup/lists/tor/guardianproject-pluto
 
 # Riseup: The Tor bugs mailing-list containing all updates to Trac.
 notmuch tag +tor-bugs -- folder:riseup/lists/tor/tor-bugs
