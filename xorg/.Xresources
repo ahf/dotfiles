@@ -15,6 +15,12 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.insecure: false
 
+! Scrolling.
+URxvt.saveLines: 10000
+URxvt.scrollTtyOutput: false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress: true
+
 ! These are only used in case the Solarized theme is not loaded using the
 ! `colorscheme` extension.
 URxvt.background: #030403
