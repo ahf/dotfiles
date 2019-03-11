@@ -4,7 +4,7 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,colorscheme,-selection-popup,-option-popup
+URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,clipboard,colorscheme,-selection-popup,-option-popup
 URxvt.scrollstyle: plain
 URxvt.scrollBar: false
 URxvt.visualBell: false
@@ -30,6 +30,11 @@ URxvt.resize-font.show: C-question
 URxvt.url-launcher: /usr/bin/qvm-open-in-dvm
 URxvt.matcher.button: 3
 URxvt.matcher.rend.0: -Uline fg4
+
+! Handle copy and paste.
+URxvt.clipboard.autocopy: true
+URxvt.clipboard.copycmd: xclip -i -selection clipboard
+URxvt.clipboard.pastecmd: xclip -o -selection clipboard
 
 ! The `searchable-scrollback` extension: Search the scrollback using ctrl+f.
 URxvt.searchable-scrollback: C-f
