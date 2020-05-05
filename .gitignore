@@ -3,6 +3,7 @@
 # Mail logs, account inboxes, and mutt's temp directory.
 mail/.mail/*.log
 mail/.mail/accounts/
+mail/.mail/mailboxes
 mail/.mutt/cache/
 mail/.mutt/temp/
 

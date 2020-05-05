@@ -1,0 +1,393 @@
+# My primary inboxes.
+mailboxes "=0x90/inbox"
+mailboxes "=riseup/inbox"
+mailboxes "=bornhack/inbox"
+
+# Debian.
+lists -group debian .*@lists\.debian\.org
+
+mailboxes "=0x90/lists/debian/debian-security"
+subscribe -group debian debian-security-announce@lists\.debian\.org
+
+# Issues (tickets, PR's, CI, etc.).
+mailboxes "=riseup/issues/tor-trac"
+mailboxes "=riseup/issues/tor/coverity"
+mailboxes "=riseup/issues/tor/github"
+mailboxes "=riseup/issues/tor/gitlab"
+mailboxes "=riseup/issues/tor/hackerone"
+mailboxes "=riseup/issues/tor/trac"
+mailboxes "=riseup/issues/tor/travis"
+mailboxes "=0x90/issues/github"
+
+# Tor aliases.
+subscribe -group tor job-anticensor@torproject\.org
+subscribe -group tor tor-shadow-dev@torproject\.org
+
+subscribe -group tor slides@torproject\.org
+subscribe -group tor speaking@torproject\.org
+
+# Tor mailing lists.
+lists -group tor .*@lists\.torproject\.org
+lists -group tor .*@lists\.nycbug\.org
+
+mailboxes "=riseup/lists/tor/vegas-leads"
+subscribe -group tor vegas-leads@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-employees"
+subscribe -group tor tor-employees@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-internal"
+mailboxes "=0x90/lists/tor/tor-internal"
+subscribe -group tor tor-internal@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/network-team"
+subscribe -group tor network-team@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/community-council"
+subscribe -group tor community-council@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/membership-advisors"
+subscribe -group tor membership-advisors@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/network-team-security"
+subscribe -group tor network-team-security@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-team"
+mailboxes "=0x90/lists/tor/tor-team"
+subscribe -group tor tor-team@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-announce"
+mailboxes "=0x90/lists/tor/tor-announce"
+subscribe -group tor tor-announce@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-bsd"
+subscribe -group tor tor-bsd@lists\.nycbug\.org
+
+mailboxes "=riseup/lists/tor/tor-dev"
+mailboxes "=0x90/lists/tor/tor-dev"
+subscribe -group tor tor-dev@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-meeting"
+mailboxes "=0x90/lists/tor/tor-meeting"
+subscribe -group tor tor-meeting@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-news"
+subscribe -group tor tor-news@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-onions"
+mailboxes "=0x90/lists/tor/tor-onions"
+subscribe -group tor tor-onions@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-project"
+mailboxes "=0x90/lists/tor/tor-project"
+subscribe -group tor tor-project@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-relays"
+mailboxes "=0x90/lists/tor/tor-relays"
+subscribe -group tor tor-relays@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-reports"
+subscribe -group tor tor-reports@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-researchers"
+subscribe -group tor tor-researchers@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-scaling"
+subscribe -group tor tor-scaling@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-talk"
+mailboxes "=0x90/lists/tor/tor-talk"
+subscribe -group tor tor-talk@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-teachers"
+mailboxes "=0x90/lists/tor/tor-teachers"
+subscribe -group tor tor-teachers@lists\.torproject\.org
+
+mailboxes "=riseup/lists/tor/tor-ux"
+subscribe -group tor ux@lists\.torproject\.org
+
+# This one is too stressful to keep track of.
+#   mailboxes "=riseup/lists/tor/tor-bugs"
+#   subscribe -group tor tor-bugs@lists\.torproject\.org
+
+# OONI.
+mailboxes "=riseup/lists/ooni/ooni-dev"
+subscribe -group ooni ooni-dev@lists\.torproject\.org
+
+mailboxes "=riseup/lists/ooni/ooni-talk"
+subscribe -group ooni ooni-talk@lists\.torproject\.org
+
+# The Guardian Project.
+lists -group guardianproject .*@lists\.guardianproject\.info
+
+mailboxes "=riseup/lists/tor/guardianproject-pluto"
+subscribe -group guardianproject pluto@lists\.guardianproject\.info
+
+# FOSDEM.
+lists -group fosdem .*@lists\.fosdem\.org
+
+mailboxes "=0x90/lists/misc/fosdem"
+subscribe -group fosdem fosdem@lists\.fosdem\.org
+
+# PROSA.
+lists -group prosa .*@lister.prosa.dk
+
+mailboxes "=0x90/lists/prosa/fsn"
+subscribe -group prosa fsn@lister\.prosa\.dk
+
+mailboxes "=0x90/lists/prosa/fsn-announce"
+subscribe -group prosa fsn-announce@lister\.prosa\.dk
+
+mailboxes "=0x90/lists/prosa/fsn-drift"
+subscribe -group prosa fsn-drift@lister\.prosa\.dk
+
+mailboxes "=0x90/lists/prosa/fsn-politik"
+subscribe -group prosa fsn-politik@lister\.prosa\.dk
+
+mailboxes "=0x90/lists/prosa/fsn-support"
+subscribe -group prosa fsn-support@lister\.prosa\.dk
+
+mailboxes "=0x90/lists/prosa/fsn-ud"
+subscribe -group prosa fsn-ud@lister\.prosa\.dk
+
+# Freedom not fear.
+lists -group fnf .*@listen\.akvorrat\.org
+
+mailboxes "=0x90/lists/misc/freedomnotfear"
+subscribe -group fnf akv-international@listen\.akvorrat\.org
+
+# The Camp.
+mailboxes "=0x90/lists/thecamp/announce"
+subscribe -group thecamp announce@thecamp\.dk
+
+mailboxes "=0x90/lists/thecamp/camp"
+subscribe -group thecamp camp@thecamp\.dk
+
+mailboxes "=0x90/lists/thecamp/discuss"
+subscribe -group thecamp discuss@thecamp\.dk
+
+mailboxes "=0x90/lists/thecamp/members"
+subscribe -group thecamp members@thecamp\.dk
+
+mailboxes "=0x90/lists/thecamp/pgm"
+subscribe -group thecamp pgm@thecamp\.dk
+
+# BSD-dk.
+mailboxes "=0x90/lists/bsd-dk/announce"
+subscribe -group bsd-dk announce@bsd-dk\.dk
+
+mailboxes "=0x90/lists/bsd-dk/bestyrelsen"
+subscribe -group bsd-dk bestyrelsen@bsd-dk\.dk
+
+mailboxes "=0x90/lists/bsd-dk/bsd-dk"
+subscribe -group bsd-dk bsd-dk@bsd-dk\.dk
+
+# CCC.
+lists -group ccc .*@lists\.ccc\.de
+
+mailboxes "=0x90/lists/ccc/34c3-content"
+subscribe -group ccc 34c3-content@lists\.ccc\.de
+
+mailboxes "=0x90/lists/ccc/34c3-resilience"
+subscribe -group ccc 34c3-resilience@lists\.ccc\.de
+
+# Labitat.
+lists -group labitat .*@lists\.labitat\.dk
+
+mailboxes "=0x90/lists/labitat/labitat-discuss"
+subscribe -group labitat discuss@lists\.labitat\.dk
+
+mailboxes "=0x90/lists/labitat/labitat-members"
+subscribe -group labitat members@lists\.labitat\.dk
+
+# IDA Driving IT.
+mailboxes "=0x90/lists/misc/driving-it"
+subscribe -group driving-it drivingit@petertoft\.dk
+
+# The OpenMirage meetings in Marrakesh.
+mailboxes "=0x90/lists/misc/marrakesh"
+subscribe -group marrakesh marrakesh@lists\.h3q\.com
+
+# All "Google Groups" are "mailing lists".
+lists .*@googlegroups\.com
+
+# OSAA.
+mailboxes "=0x90/lists/misc/osaa"
+subscribe -group osaa openspaceaarhus@googlegroups\.com
+
+# Traffic Obfuscation
+mailboxes "=0x90/lists/misc/traffic-obfuscation"
+subscribe -group traffic-obfuscation traffic-obf@googlegroups\.com
+
+# Qubes.
+mailboxes "=0x90/lists/qubes/qubes-announce"
+subscribe -group qubes qubes-announce@googlegroups\.com
+
+mailboxes "=0x90/lists/qubes/qubes-devel"
+subscribe -group qubes qubes-devel@googlegroups\.com
+
+mailboxes "=0x90/lists/qubes/qubes-project"
+subscribe -group qubes qubes-project@googlegroups\.com
+
+mailboxes "=0x90/lists/qubes/qubes-users"
+subscribe -group qubes qubes-users@googlegroups\.com
+
+# Crypto.
+mailboxes "=0x90/lists/crypto/cabforum-pub"
+subscribe -group crypto public@cabforum\.org
+
+mailboxes "=0x90/lists/crypto/algorithms"
+subscribe -group crypto cryptanalytic-algorithms@googlegroups\.com
+
+mailboxes "=0x90/lists/crypto/competitions"
+subscribe -group crypto crypto-competitions@googlegroups\.com
+
+mailboxes "=0x90/lists/crypto/curves"
+subscribe -group crypto curves@moderncrypto\.org
+
+mailboxes "=0x90/lists/crypto/messaging"
+subscribe -group crypto messaging@moderncrypto\.org
+
+mailboxes "=0x90/lists/crypto/noise"
+subscribe -group crypto noise@moderncrypto\.org
+
+mailboxes "=0x90/lists/crypto/snakeoil"
+subscribe -grup crypto snakeoil@googlegroups\.com
+
+# Riseup.
+lists -group riseup .*@lists\.riseup\.net
+
+mailboxes "=riseup/lists/riseup/protectourspaces"
+subscribe -group riseup protectourspaces@lists\.riseup\.net
+
+# OTR.
+lists -group otr .*@lists\.cypherpunks\.ca
+
+mailboxes "=0x90/lists/otr/otr-dev"
+subscribe -group otr otr-dev@lists\.cypherpunks\.ca
+
+mailboxes "=0x90/lists/otr/otr-users"
+subscribe -group otr otr-users@lists\.cypherpunks\.ca
+
+# NIST.
+lists -group nist .*@list\.nist\.gov
+
+mailboxes "=0x90/lists/nist/pqc-forum"
+subscribe -group nist pqc-forum@list\.nist\.gov
+
+# IETF.
+mailboxes "=0x90/lists/ietf/announce"
+subscribe -group ietf ietf-announce@ietf\.org
+
+mailboxes "=0x90/lists/ietf/dns-privacy"
+subscribe -group ietf dns-privacy@ietf\.org
+
+mailboxes "=0x90/lists/ietf/hrpc"
+subscribe -group ietf hrpc@ietf\.org
+
+mailboxes "=0x90/lists/ietf/mls"
+subscribe -group ietf mls@ietf\.org
+
+mailboxes "=0x90/lists/ietf/quic"
+subscribe -group ietf quic@ietf\.org
+
+mailboxes "=0x90/lists/ietf/tls"
+subscribe -group ietf tls@ietf\.org
+
+# DFri in Sweden.
+lists -group dfri .*@lists\.dfri\.se
+
+mailboxes "=0x90/lists/misc/dfri"
+subscribe -group dfri listan@lists\.dfri\.se
+
+mailboxes "=riseup/lists/misc/cryptoparty-sthlm"
+subscribe -group dfri cryptoparty@lists\.dfri\.se
+
+# Cryptoparty Global.
+mailboxes "=0x90/lists/misc/cryptoparty-global"
+
+# Erlang Questions.
+mailboxes "=0x90/lists/misc/erlang-questions"
+subscribe -group erlang erlang-questions@erlang\.org
+
+# IRC6.
+mailboxes "=0x90/lists/irc/irc6-team"
+subscribe -group irc6 team@irc6\.net
+
+# IRCsource.
+mailboxes "=0x90/lists/irc/ircsource-admins"
+subscribe -group ircsource admins@ircsource\.net
+
+mailboxes "=0x90/lists/irc/ircsource-opers"
+subscribe -group ircsource opers@ircsource\.net
+
+# Bitbureauet.
+lists -group bitbureauet .*@list\.bitbureauet\.dk
+
+mailboxes "=0x90/lists/misc/bitsters"
+subscribe -group bitbureauet bitsters@list\.bitbureauet\.dk
+
+# Liberation Tech.
+lists -group liberationtech .*@lists\.liberationtech\.org
+
+mailboxes "=0x90/lists/misc/liberationtech"
+subscribe -group liberationtech lt@lists\.liberationtech\.org
+
+# The ircd ratbox project.
+lists -group ircd-ratbox .*@lists\.ratbox\.org
+
+mailboxes "=0x90/lists/irc/ircd-ratbox"
+subscribe -group ircd-ratbox ircd-ratbox@lists\.ratbox\.org
+
+# IRCnet's operator mailing list.
+lists -group ircnet opers@lists\.gm-hosting\.net
+
+mailboxes "=0x90/lists/irc/ircnet-opers"
+subscribe -group ircnet opers@lists\.gm-hosting\.net
+
+# DNSSEC Tools.
+mailboxes "=0x90/lists/misc/dnssec-tools-users"
+subscribe -group dnssec-tools-users users@dnssec-tools\.org
+
+# Secure Desktops.
+mailboxes "=0x90/lists/misc/secure-desktops"
+subscribe -group secure-desktops desktops@secure-os\.org
+
+# Old Irssi mailing lists.
+#mailboxes "=0x90/lists/irssi/irssi-info"
+subscribe -group irssi info@irssi\.org
+
+#mailboxes "=0x90/lists/irssi/irssi-staff"
+subscribe -group irssi staff@irssi\.org
+
+#mailboxes "=0x90/lists/irssi/irssi-bugs"
+#mailboxes "=0x90/lists/irssi/irssi-scripts-bugs"
+
+# Old Open Source Days.
+mailboxes "=0x90/lists/opensourcedays/announce"
+subscribe -group opensourcedays announce@opensourcedays\.org
+
+mailboxes "=0x90/lists/opensourcedays/apsbestyr"
+subscribe -group opensourcedays apsbestyr@opensourcedays\.org
+
+mailboxes "=0x90/lists/opensourcedays/program"
+subscribe -group opensourcedays program@opensourcedays\.org
+
+mailboxes "=0x90/lists/opensourcedays/team"
+subscribe -group opensourcedays team@opensourcedays\.org
+
+mailboxes "=0x90/lists/opensourcedays/ug"
+subscribe -group opensourcedays ug@opensourcedays\.org
+
+# Old OpenSource.dk announcement list.
+mailboxes "=0x90/lists/misc/announce-opensource-dk"
+subscribe -group opensource-dk announce@opensource\.dk
+
+# Old SSLUG mailing lists.
+mailboxes "=0x90/lists/sslug/bestyrelsen"
+subscribe -group sslug bestyrelsen@sslug\.dk
+
+mailboxes "=0x90/lists/sslug/sslug-announce"
+subscribe -grup sslug sslug-announce@maillist\.sslug\.dk
+
+# vim: set ft=neomuttrc :

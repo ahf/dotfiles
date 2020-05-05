@@ -1,16 +1,28 @@
 set folder = "~/.mail/accounts"
-source ~/.mail/mailboxes
-
-set spoolfile = "+0x90/inbox"
+set spoolfile = "=0x90/inbox"
 
 set mail_check_stats
+set timeout=10
 
 set sidebar_visible=no
 set sidebar_short_path
 set sidebar_delim_chars="/"
 set sidebar_folder_indent
 set sidebar_indent_string=" "
-set sidebar_new_mail_only=no
+set sidebar_new_mail_only=yes
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
+set sidebar_width = 40
+
+set date_format = "%Y/%m/%d %H:%M"
+#set index_format = "[%Z %?X?A& ?] %-30.30F   %s %*  %D"
+set index_format = "%Z %?X?A& ? (%4c)  %-25.25F   %s %*  %D"
+
+set status_chars = "-*%A"
+set status_format = "─[ Folder: %f (%r) ]─[ %m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+
+sidebar_whitelist =0x90/inbox
+sidebar_whitelist =riseup/inbox
+sidebar_whitelist =bornhack/inbox
 
 set alias_file = ~/.mutt/alias
 set certificate_file = ~/.mutt/certificates
@@ -19,8 +31,6 @@ set tmpdir = ~/.mutt/temp
 # Don't ask if we should quit.
 bind index q noop
 bind index x noop
-
-#set wrap=78
 
 # Set my name
 set realname = "Alexander Færøy"
@@ -34,6 +44,9 @@ set signature=~/.mutt/signature
 # Allow us to edit headers when writing an email.
 set edit_headers
 
+# Enforce strict threads (don't group by subject).
+set strict_threads
+
 # Use vim as editor and go to the first empty line.
 set editor="vim '+/^$'"
 
@@ -41,10 +54,7 @@ set editor="vim '+/^$'"
 set header_cache = ~/.mutt/cache/headers
 
 # Enable the message cache.
-set message_cachedir = ~/.mutt/cache/bodies
-
-# Don't auto-enable S/MIME support.
-set crypt_autosmime=no
+# set message_cachedir = ~/.mutt/cache/messages
 
 set pager_index_lines = 10
 set pager_context = 5
@@ -75,17 +85,15 @@ set hostname = localhost
 set delete=yes
 
 # NM
-bind index,pager X vfolder-from-query
-bind index,pager x change-vfolder
-bind index <Esc>s sidebar-toggle-virtual
+# bind index,pager x change-vfolder
 
-virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
-virtual-mailboxes "tor" "notmuch://?query=tag:tor"
-virtual-mailboxes "bornhack" "notmuch://?query=tag:bornhack"
+# virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
+# virtual-mailboxes "tor" "notmuch://?query=tag:tor"
+# virtual-mailboxes "bornhack" "notmuch://?query=tag:bornhack"
 
 #set virtual_spoolfile=yes
 
-set nm_query_type = messages
+# set nm_query_type = messages
 
 alternative_order text/plain text/enriched text/html
 
@@ -94,9 +102,35 @@ auto_view text/html
 #set reverse_name=yes
 #alternates ^ahf@0x90.dk$ ^ahf@torproject.org$ ^ahf@bornhack.org$
 
+set mark_old=no
+
+set check_new=yes
+
+# Use notmuch as addressbook.
+set query_command="notmuch-addrlookup --mutt '%s'"
+bind editor <Tab> complete-query
+bind editor ^T    complete
+
 set rfc2047_parameters
 set mailcap_path=~/.mutt/mailcap
 bind attach <return> view-mailcap
+
+set ts_enabled=yes
+
+# set sort = threads
+# set sort_aux = reverse-last-date-received
+
+# Load our macros.
+source ~/.mutt/macros
+
+# Load our mailboxes.
+source ~/.mutt/mailbox
+
+# Load our theme.
+source ~/.mutt/theme
+
+# Load our GnuPG configuration.
+source ~/.mutt/gnupg
 
 # Load our default account configuration.
 source ~/.mutt/accounts/0x90
@@ -107,18 +141,12 @@ folder-hook 0x90/*     source ~/.mutt/accounts/0x90
 folder-hook riseup/*   source ~/.mutt/accounts/riseup
 folder-hook bornhack/* source ~/.mutt/accounts/bornhack
 #  We try to see if the email was sent to a commonly used address.
-reply-hook "~C ahf@0x90.dk" source ~/.mutt/accounts/0x90
-reply-hook "~C ahf@torproject.org" source ~/.mutt/accounts/riseup
-reply-hook "~C ahf@bornhack.org" source ~/.mutt/accounts/bornhack
+reply-hook "~C ahf@0x90.dk"        "source ~/.mutt/accounts/0x90"
+reply-hook "~C ahf@torproject.org" "source ~/.mutt/accounts/riseup"
+reply-hook "~C ahf@bornhack.org"   "source ~/.mutt/accounts/bornhack"
 #  We try to see, when replying, if we can detect which account it was delivered to.
-reply-hook '~h "Delivered-To: ahf@0x90.dk"' source ~/.mutt/accounts/0x90
-reply-hook '~h "Delivered-To: ahfaeroey@riseup.net"' source ~/.mutt/accounts/riseup
-reply-hook '~h "Delivered-To: ahf@bornhack.org"' source ~/.mutt/accounts/bornhack
+reply-hook '~h "Delivered-To: ahf@0x90.dk"'          "source ~/.mutt/accounts/0x90"
+reply-hook '~h "Delivered-To: ahfaeroey@riseup.net"' "source ~/.mutt/accounts/riseup"
+reply-hook '~h "Delivered-To: ahf@bornhack.org"'     "source ~/.mutt/accounts/bornhack"
 
-set pgp_auto_decode=yes
-
-set smime_verify_command=""
-set smime_verify_opaque_command=""
-set smime_decrypt_command=""
-
-source ~/.mutt/theme
+# vim: set ft=neomuttrc :

@@ -1,0 +1,16 @@
+# Set some defaults to noop.
+bind index,pager a noop
+bind index,pager e noop
+bind index,pager g noop
+bind index,pager i noop
+
+# Search using notmuch.
+# bind index,pager / vfolder-from-query
+
+# Remap group-reply to a.
+bind index,pager a group-reply
+
+# Ctrl+r: Reload our config.
+macro index,browser \Cr "<enter-command>source ~/.mutt/muttrc<enter>" "Reload Mutt config"
+
+# vim: set ft=neomuttrc :
