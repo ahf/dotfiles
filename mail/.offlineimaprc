@@ -14,14 +14,16 @@ sep = " "
 footer = "\n"
 folderfilter = lambda a, f: (a, f) not in [('0x90', 'spam'),
                                            ('0x90', 'trash'),
+                                           ('0x90', 'drafts'),
                                            ('riseup', 'spam'),
-                                           ('riseup', 'trash')]
+                                           ('riseup', 'trash'),
+                                           ('riseup', 'drafts')]
 
 [Account riseup]
-autorefresh = 10
+autorefresh = 5
 localrepository = riseup-local
 remoterepository = riseup-remote
-postsynchook = ~/.mail/scripts/post-sync-hook.bash
+postsynchook = ~/.mail/scripts/post-sync-hook.bash ~/.mail/notmuch/riseup
 
 [Repository riseup-local]
 type = Maildir
@@ -38,12 +40,11 @@ nametrans = lambda f: {'inbox':   'INBOX',
 [Repository riseup-remote]
 type = IMAP
 ssl = yes
-remotehost = 5gdvpfoh6kb2iqbizb37lzk2ddzrwa47m6rpdueg2m656fovmbhoptqd.onion
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotehost = mail.riseup.net
 remoteport = 993
 remoteuser = ahfaeroey@riseup.net
 remotepasseval = get_password('email/ahfaeroey@riseup.net')
-cert_fingerprint = 773d5c2b15361ab70e9643d37091ec038ef1e33d
-maxconnections = 3
 folderfilter = lambda f: f not in []
 nametrans = lambda f: {'INBOX':   'inbox',
                        'Sent':    'sent',
@@ -54,10 +55,10 @@ nametrans = lambda f: {'INBOX':   'inbox',
                       }.get(f, f)
 
 [Account 0x90]
-autorefresh = 10
+autorefresh = 5
 localrepository = 0x90-local
 remoterepository = 0x90-remote
-postsynchook = ~/.mail/scripts/post-sync-hook.bash
+postsynchook = ~/.mail/scripts/post-sync-hook.bash ~/.mail/notmuch/0x90
 
 [Repository 0x90-local]
 type = Maildir
@@ -77,7 +78,7 @@ type = Gmail
 auth_mechanisms = PLAIN
 remoteuser = ahf@0x90.dk
 remotepasseval = get_password('email/ahf@0x90.dk')
-maxconnections = 3
+maxconnections = 4
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 realdelete = no
 folderfilter = lambda f: f not in []
@@ -91,10 +92,10 @@ nametrans = lambda f: {'INBOX':                   'inbox',
                       }.get(f, f)
 
 [Account bornhack]
-autorefresh = 10
+autorefresh = 5
 localrepository = bornhack-local
 remoterepository = bornhack-remote
-postsynchook = ~/.mail/scripts/post-sync-hook.bash
+postsynchook = ~/.mail/scripts/post-sync-hook.bash ~/.mail/notmuch/bornhack
 
 [Repository bornhack-local]
 type = Maildir
@@ -110,13 +111,12 @@ nametrans = lambda f: {'inbox':   'INBOX',
 [Repository bornhack-remote]
 type = IMAP
 ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 remotehost = imap.bornhack.org
 remoteport = 993
 remoteuser = ahf@bornhack.org
 remotepasseval = get_password('email/ahf@bornhack.org')
 auth_mechanisms = PLAIN
-maxconnections = 3
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 folderfilter = lambda f: f not in []
 nametrans = lambda f: {'INBOX':    'inbox',
                        'Sent':     'sent',
