@@ -1,6 +1,24 @@
-set from = ahf@bornhack.org
-set sendmail = "/usr/bin/msmtp -a bornhack"
-set record = "=bornhack/sent"
-set postponed = "=bornhack/drafts"
+# Set our from to our email address. Our name is handled globally in muttrc.
+set from="ahf@bornhack.org"
+
+# Specify our BornHack SMTP server.
+set sendmail="/usr/bin/msmtp -a bornhack"
+
+# Store sent email.
+set record="=bornhack/sent"
+
+# Store drafts email.
+set postponed="=bornhack/drafts"
+
+# Macros
+macro index,pager gi "<change-folder>=bornhack/inbox<enter>"   "Go to BornHack inbox"
+macro index,pager ga "<change-folder>=bornhack/archive<enter>" "Go to BornHack archive"
+macro index,pager gd "<change-folder>=bornhack/drafts<enter>"  "Go to BornHack drafts"
+
+# Archive message.
+macro index,pager e "<save-message>=bornhack/archive<enter><enter>" "Save to BornHack archive"
+
+# Delete message.
+macro index,pager d "<save-message>=bornhack/trash<enter><enter>" "Move message to BornHack trash"
 
 # vim: set ft=muttrc :

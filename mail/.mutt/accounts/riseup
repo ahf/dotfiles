@@ -1,6 +1,24 @@
-set from = ahf@torproject.org
-set sendmail = "/usr/bin/msmtp -a riseup"
-set record = "=riseup/sent"
-set postponed = "=riseup/drafts"
+# Set our from to our email address. Our name is handled globally in muttrc.
+set from="ahf@torproject.org"
+
+# Specify our Riseup SMTP server.
+set sendmail="/usr/bin/msmtp -a riseup"
+
+# Store sent email.
+set record="=riseup/sent"
+
+# Store drafts email.
+set postponed="=riseup/drafts"
+
+# Macros
+macro index,pager gi "<change-folder>=riseup/inbox<enter>"   "Go to Riseup inbox"
+macro index,pager ga "<change-folder>=riseup/archive<enter>" "Go to Riseup archive"
+macro index,pager gd "<change-folder>=riseup/drafts<enter>"  "Go to Riseup drafts"
+
+# Archive message.
+macro index,pager e "<save-message>=riseup/archive<enter><enter>" "Save to Riseup archive"
+
+# Delete message.
+macro index,pager d "<save-message>=riseup/trash<enter><enter>" "Move message to Riseup trash"
 
 # vim: set ft=muttrc :
