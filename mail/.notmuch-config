@@ -4,7 +4,7 @@ path=/home/user/.mail/accounts/
 [user]
 name=Alexander Færøy
 primary_email=ahf@0x90.dk
-other_email=ahf@torproject.org;ahf@irssi.org;ahf@bornhack.org;ahfaeroey@riseup.net;
+other_email=ahf@torproject.org;ahf@irssi.org;ahf@bornhack.org;ahf@fsfe.org;ahfaeroey@riseup.net;ahfaeroey@gmail.com;
 
 [new]
 tags=unread;
