@@ -15,3 +15,6 @@ gnupg/.gnupg/random_seed
 gnupg/.gnupg/sshcontrol
 gnupg/.gnupg/tofu.db
 gnupg/.gnupg/trustdb.gpg
+
+# Vim related files.
+vim/.vim/spell/*
