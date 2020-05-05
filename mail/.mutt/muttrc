@@ -94,6 +94,10 @@ auto_view text/html
 #set reverse_name=yes
 #alternates ^ahf@0x90.dk$ ^ahf@torproject.org$ ^ahf@bornhack.org$
 
+set rfc2047_parameters
+set mailcap_path=~/.mutt/mailcap
+bind attach <return> view-mailcap
+
 # Load our default account configuration.
 source ~/.mutt/accounts/0x90
 
