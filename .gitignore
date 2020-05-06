@@ -17,4 +17,5 @@ gnupg/.gnupg/tofu.db
 gnupg/.gnupg/trustdb.gpg
 
 # Vim related files.
+vim/.vim/.netrwhist
 vim/.vim/spell/*
