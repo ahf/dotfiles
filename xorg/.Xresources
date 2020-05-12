@@ -4,7 +4,7 @@ Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
-URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,clipboard,colorscheme,-selection-popup,-option-popup
+URxvt.perl-ext-common: default,resize-font,matcher,selection-to-clipboard,clipboard,-selection-popup,-option-popup
 URxvt.scrollstyle: plain
 URxvt.scrollBar: false
 URxvt.visualBell: false
