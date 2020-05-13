@@ -15,10 +15,11 @@ set sidebar_width = 40
 
 set date_format = "%Y/%m/%d %H:%M"
 #set index_format = "[%Z %?X?A& ?] %-30.30F   %s %*  %D"
-set index_format = "%Z %?X?A& ? (%4c)  %-25.25F   %s %*  %D"
+#set index_format = "%Z %?X?A& ?  %-25.25F   %?M?%2M&  ? %s %*  %D"
+set index_format = "%Z %?X?A& ?  %-25.25Fp   %?M?%2M&  ? %s %*  %D"
 
 set status_chars = "-*%A"
-set status_format = "─[ Folder: %f (%r) ]─[ %m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set status_format = "─[ %f (%r) ]─[ %m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
 
 sidebar_whitelist =0x90/inbox
 sidebar_whitelist =riseup/inbox
