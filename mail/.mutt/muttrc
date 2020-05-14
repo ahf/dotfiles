@@ -48,6 +48,15 @@ set edit_headers
 # Enforce strict threads (don't group by subject).
 set strict_threads
 
+# Don't collapse threads with unread messages.
+set collapse_all=yes
+set collapse_flagged=no
+set collapse_unread=no
+
+# Bindings for collapsing.
+bind index - collapse-thread
+bind index _ collapse-all
+
 # Use vim as editor and go to the first empty line.
 set editor="vim '+/^$'"
 
