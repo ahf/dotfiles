@@ -45,3 +45,11 @@
     from = Alexander Færøy <ahf@0x90.dk>
     smtpserver = /usr/bin/msmtp
     confirm = auto
+
+[alias]
+    push-all = !/home/user/.local/bin/git-push-all.sh
+    pull-all = !/home/user/.local/bin/git-pull-all.sh
+    merge-forward = !/home/user/.local/bin/git-merge-forward.sh
+    list-tor-branches = !/home/user/.local/bin/git-list-tor-branches.sh
+    pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^tor-github || echo origin)} refs/pull/$1/head:tor-github/pr/$1 && git checkout tor-github/pr/$1; }; f"
+    mr = "!f() { git fetch -fu ${2:-$(git remote |grep ^tor-gitlab || echo origin)} refs/merge-requests/$1/head:tor-gitlab/mr/$1 && git checkout tor-gitlab/mr/$1; }; f"
