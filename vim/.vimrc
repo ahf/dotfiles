@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2019/01/12 00:16:33
+" Most recent update: 2020/07/08 01:12:28
 "
 
 " I use my name and email for various things throughout the
@@ -340,6 +340,12 @@ inoremap # X<BS>#
 
 " Make Ctrl+t open a new tab.
 nmap <C-t> :tabnew<cr>
+
+augroup ahf
+    autocmd!
+    autocmd BufWritePre /tmp/* setlocal noundofile
+    autocmd BufWritePre /dev/shm/* setlocal noundofile
+augroup END
 
 " When entering a new file, always disable hlsearch.
 au VimEnter * nohlsearch
