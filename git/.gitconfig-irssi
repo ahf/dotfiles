@@ -1,0 +1,13 @@
+#
+# Alexander Færøy <ahf@0x90.dk>
+# PGP: 0x61A208E16E7CB435
+#
+# Git Configuration File for Irssi development.
+#
+# Most recent update: 2020/11/26 01:04:18
+#
+
+[user]
+    email = ahf@irssi.org
+
+# vim: ft=gitconfig :

@@ -4,12 +4,21 @@
 #
 # Git Configuration File.
 #
-# Most recent update: Wed 09 Jan 2019 07:07:32 PM CET
+# Most recent update: 2020/11/26 01:10:56
 #
 
 [user]
     name = Alexander Færøy
     email = ahf@0x90.dk
+
+[includeIf "gitdir:~/src/*.torproject.org/"]
+    path = .gitconfig-tor
+
+[includeIf "gitdir:~/src/github.com/irssi/"]
+    path = .gitconfig-irssi
+
+[includeIf "gitdir:~/src/github.com/bornhack/"]
+    path = .gitconfig-bornhack
 
 [color]
     ui = true
