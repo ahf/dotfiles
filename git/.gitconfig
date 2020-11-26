@@ -53,3 +53,6 @@
     list-tor-branches = !/home/user/.local/bin/git-list-tor-branches.sh
     pr = "!f() { git fetch -fu ${2:-$(git remote |grep ^tor-github || echo origin)} refs/pull/$1/head:tor-github/pr/$1 && git checkout tor-github/pr/$1; }; f"
     mr = "!f() { git fetch -fu ${2:-$(git remote |grep ^tor-gitlab || echo origin)} refs/merge-requests/$1/head:tor-gitlab/mr/$1 && git checkout tor-gitlab/mr/$1; }; f"
+[pull]
+	ff = only
+	rebase = false
