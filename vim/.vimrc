@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2020/07/14 23:00:19
+" Most recent update: 2020/11/26 00:59:43
 "
 
 " I use my name and email for various things throughout the
@@ -305,11 +305,14 @@ function! <SID>LoadColorScheme(schemes)
     endwhile
 endfunction
 
-" Load our preferred colorschemes in the defined order.
-call <SID>LoadColorScheme("inkpot:night")
-
 " We are using a dark background.
 set background=dark
+
+" We want the black Inkpot background.
+let g:inkpot_black_background = 1
+
+" Load our preferred colorschemes in the defined order.
+call <SID>LoadColorScheme("inkpot:night")
 
 " Disable backup of SCM commit message files.
 autocmd BufRead svn-commit.tmp setlocal nobackup
