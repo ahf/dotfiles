@@ -84,6 +84,7 @@ set nojoinspaces
 " instead.
 set nomodeline
 
+" Secure Modelines
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_modelines = 15
 
