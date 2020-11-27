@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2020/11/26 01:20:29
+" Most recent update: 2020/11/27 02:17:01
 "
 
 " I use my name and email for various things throughout the
@@ -298,6 +298,44 @@ endfunction
 
 noremap <Leader>sh  :call <SID>SwitchHeader(0)<CR>
 noremap <Leader>ssh :call <SID>SwitchHeader(1)<CR>
+
+" Vim Wiki
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_auto_header = 1
+let g:vimwiki_global_ext = 0
+let g:vimwiki_hl_cb_checked = 2
+let g:vimwiki_hl_headers = 1
+let g:vimwiki_listsym_rejected = "✗"
+let g:vimwiki_listsyms = " ○◐●✓"
+let g:vimwiki_markdown_header_style = 1
+let g:vimwiki_markdown_link_ext = 0
+let g:vimwiki_toc_header = "Table of Contents"
+let g:vimwiki_use_calendar = 1
+
+" Vim Wiki
+let wiki = {}
+let wiki.name                = "Wiki"
+let wiki.path                = "~/wiki/"
+let wiki.syntax              = "markdown"
+let wiki.ext                 = ".md"
+let wiki.index               = "_index"
+let wiki.auto_tags           = 1
+let wiki.auto_generate_links = 1
+let wiki.diary_caption_level = 1
+let wiki.diary_rel_path      = "journals"
+let wiki.diary_index         = "_index"
+let wiki.diary_header        = "Journal Index"
+let wiki.auto_diary_index    = 1
+
+let wiki.nested_syntaxes = {
+                         \    "python": "python",
+                         \    "rust":   "rust",
+                         \    "c":      "c",
+                         \    "go":     "go"
+                         \ }
+
+" Enable our wikis.
+let g:vimwiki_list = [wiki]
 
 " Function that allows us to give a set of colorschemes to load and
 " stop at the first available colorscheme.
