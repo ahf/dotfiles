@@ -88,6 +88,9 @@ set nomodeline
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_modelines = 15
 
+" Spelling.
+set spelllang=en_us
+
 " Enable the wild menu.
 set wildmenu
 set wildignore+=*.o,*~
@@ -353,6 +356,9 @@ augroup ahf
     autocmd BufWritePre /tmp/* setlocal noundofile
     autocmd BufWritePre /dev/shm/* setlocal noundofile
 augroup END
+
+" Magically fix typos using <C-l>
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " When entering a new file, always disable hlsearch.
 au VimEnter * nohlsearch
