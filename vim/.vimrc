@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2020/11/26 00:59:43
+" Most recent update: 2020/11/26 01:20:29
 "
 
 " I use my name and email for various things throughout the
@@ -341,6 +341,7 @@ set formatoptions+=j
 " Don't force #'s to be at column 0.
 inoremap # X<BS>#
 
+" Use the mixed menu (buffers, files, etc.)
 let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Make Ctrl+t open a new tab.

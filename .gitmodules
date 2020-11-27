@@ -43,3 +43,9 @@
 [submodule "vim/.vim/pack/ahf/start/vim-reason-plus"]
 	path = vim/.vim/pack/ahf/start/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus.git
+[submodule "vim/.vim/pack/ahf/start/vimwiki"]
+	path = vim/.vim/pack/ahf/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/.vim/pack/ahf/start/calendar-vim"]
+	path = vim/.vim/pack/ahf/start/calendar-vim
+	url = https://github.com/mattn/calendar-vim.git
