@@ -39,7 +39,7 @@
 	url = https://github.com/ahf/twelf-syntax.git
 [submodule "vim/.vim/pack/ahf/start/onion-vim"]
 	path = vim/.vim/pack/ahf/start/onion-vim
-	url = https://github.com/ahf/onion-vim.git
+	url = https://gitlab.torproject.org/ahf/onion-vim.git
 [submodule "vim/.vim/pack/ahf/start/vim-reason-plus"]
 	path = vim/.vim/pack/ahf/start/vim-reason-plus
 	url = https://github.com/reasonml-editor/vim-reason-plus.git
