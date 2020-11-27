@@ -187,6 +187,11 @@ if has("gui_running")
     " window.
     set guioptions-=R
 
+    " Enable dark mode (only with GTK).
+    if has("gui_gtk")
+        set guioptions+=d
+    endif
+
     " Enable mouse support.
     set mouse=a
 
