@@ -4,7 +4,7 @@
 "
 " Vim Configuration File.
 "
-" Most recent update: 2020/11/27 02:17:01
+" Most recent update: 2020/12/05 23:07:04
 "
 
 " I use my name and email for various things throughout the
@@ -230,8 +230,9 @@ autocmd BufWritePre gpg-agent.conf :call <SID>UpdateHeaderTimestamp()
 autocmd BufWritePre gpg.conf       :call <SID>UpdateHeaderTimestamp()
 
 "   Git
-autocmd BufWritePre .gitconfig :call <SID>UpdateHeaderTimestamp()
-autocmd BufWritePre .gitignore :call <SID>UpdateHeaderTimestamp()
+autocmd BufWritePre .gitconfig     :call <SID>UpdateHeaderTimestamp()
+autocmd BufWritePre .gitignore     :call <SID>UpdateHeaderTimestamp()
+autocmd BufWritePre .gitattributes :call <SID>UpdateHeaderTimestamp()
 
 "   Dunst
 autocmd BufWritePre dunstrc :call <SID>UpdateHeaderTimestamp()

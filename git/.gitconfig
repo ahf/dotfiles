@@ -4,7 +4,7 @@
 #
 # Git Configuration File.
 #
-# Most recent update: 2020/11/26 01:10:56
+# Most recent update: 2020/12/05 23:05:38
 #
 
 [user]
@@ -29,6 +29,7 @@
 [core]
     whitespace = space-before-tab, trailing-space
     excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
 
 [diff]
     renames = copy

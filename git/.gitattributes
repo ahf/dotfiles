@@ -1,0 +1,13 @@
+#
+# Alexander Færøy <ahf@0x90.dk>
+# PGP: 0x61A208E16E7CB435
+#
+# Git File Attributes File.
+#
+# Most recent update: 2020/12/05 23:07:09
+#
+
+# Rust.
+*.rs diff=rust
+
+# vim: ft=gitconfig :
