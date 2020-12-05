@@ -96,6 +96,9 @@ set wildmenu
 set wildignore+=*.o,*~
 set wildmode=list:longest,full
 
+" Always enable the sign column.
+set signcolumn=yes
+
 " Show results as you type your search query.
 set incsearch
 
