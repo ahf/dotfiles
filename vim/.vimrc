@@ -389,6 +389,12 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 " Make Ctrl+t open a new tab.
 nmap <C-t> :tabnew<cr>
 
+" Magically fix typos using <C-l>
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+" Ack.
+nnoremap <Leader>a :Ack!<Space>
+
 augroup ahf
     autocmd!
 
