@@ -377,15 +377,6 @@ function! <SID>WindowToTop()
     execute "resize" l:height
 endfunction
 
-autocmd FileType help :call <SID>WindowToTop()
-autocmd FileType help nmap <buffer> <Return> <C-]>
-
-" Sync syntax for new buffers.
-autocmd BufEnter * syntax sync fromstart
-
-" Enable spell checking and textwidth for emails.
-autocmd FileType mail setlocal nohlsearch spell textwidth=72 formatoptions+=t
-
 " Remove a comment leader when joining lines
 set formatoptions+=j
 
@@ -400,14 +391,26 @@ nmap <C-t> :tabnew<cr>
 
 augroup ahf
     autocmd!
+
+    " Never enable Undo files for files in temporary folders.
     autocmd BufWritePre /tmp/* setlocal noundofile
     autocmd BufWritePre /dev/shm/* setlocal noundofile
+
+    " Make Vim's help system less frustrating to use.
+    autocmd FileType help :call <SID>WindowToTop()
+    autocmd FileType help nmap <buffer> <Return> <C-]>
+
+    " Enable spell checking and textwidth for emails.
+    autocmd FileType mail setlocal nohlsearch spell textwidth=72 formatoptions+=t
+
+    " Enable spell checking for Markdown.
+    autocmd FileType markdown setlocal spell
+
+    " Sync syntax for new buffers.
+    autocmd BufEnter * syntax sync fromstart
+
+    " When entering a new file, always disable hlsearch.
+    autocmd VimEnter * nohlsearch
 augroup END
-
-" Magically fix typos using <C-l>
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
-
-" When entering a new file, always disable hlsearch.
-au VimEnter * nohlsearch
 
 " vim: set sw=4 sts=4 et tw=72 :
