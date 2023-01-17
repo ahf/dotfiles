@@ -1,6 +1,9 @@
 # Set our from to our email address. Our name is handled globally in muttrc.
 set from="ahf@bornhack.org"
 
+# Our signature.
+set signature = "~/.mutt/signatures/bornhack"
+
 # Specify our BornHack SMTP server.
 set sendmail="/usr/bin/msmtp -a bornhack"
 
