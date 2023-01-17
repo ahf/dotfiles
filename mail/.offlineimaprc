@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = riseup, 0x90, bornhack, faeroey
+accounts = riseup, bornhack
 pythonfile = ~/.mail/scripts/offlineimap.py
 maxsyncaccounts = 5
 socktimeout = 120
