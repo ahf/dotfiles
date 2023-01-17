@@ -1,0 +1,6 @@
+# Handle inbox, archive, spam, draft, trash.
++inbox   -- folder:faeroey/inbox
++archive -- folder:faeroey/archive
++drafts  -- folder:faeroey/drafts
++trash   -- folder:faeroey/trash
++spam    -- folder:faeroey/spam

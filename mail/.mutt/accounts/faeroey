@@ -1,0 +1,27 @@
+# Set our from to our email address. Our name is handled globally in muttrc.
+set from="ahf@faeroey.com"
+
+# Our signature.
+set signature = "~/.mutt/signature"
+
+# Specify our Faeroey SMTP server.
+set sendmail="/usr/bin/msmtp -a faeroey"
+
+# Store sent email.
+set record="=faeroey/sent"
+
+# Store drafts email.
+set postponed="=faeroey/drafts"
+
+# Macros
+macro index,pager gi "<change-folder>=faeroey/inbox<enter>"   "Go to Faeroey inbox"
+macro index,pager ga "<change-folder>=faeroey/archive<enter>" "Go to Faeroey archive"
+macro index,pager gd "<change-folder>=faeroey/drafts<enter>"  "Go to Faeroey drafts"
+
+# Archive message.
+macro index,pager e "<tag-thread><tag-prefix><save-message>=faeroey/archive<enter><enter>" "Save to Faeroey archive"
+
+# Delete message.
+macro index,pager d "<tag-thread><tag-prefix><save-message>=faeroey/trash<enter><enter>" "Move message to Faeroey trash"
+
+# vim: set ft=muttrc :

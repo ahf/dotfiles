@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = riseup, 0x90, bornhack
+accounts = riseup, 0x90, bornhack, faeroey
 pythonfile = ~/.mail/scripts/offlineimap.py
 maxsyncaccounts = 5
 socktimeout = 120
@@ -17,7 +17,10 @@ folderfilter = lambda a, f: (a, f) not in [('0x90', 'spam'),
                                            ('0x90', 'drafts'),
                                            ('riseup', 'spam'),
                                            ('riseup', 'trash'),
-                                           ('riseup', 'drafts')]
+                                           ('riseup', 'drafts'),
+                                           ('faeroey', 'spam'),
+                                           ('faeroey', 'trash'),
+                                           ('faeroey', 'drafts')]
 
 [Account riseup]
 autorefresh = 5
@@ -123,4 +126,42 @@ nametrans = lambda f: {'INBOX':    'inbox',
                        'Archives': 'archive',
                        'Trash':    'trash',
                        'Drafts':   'drafts',
+                      }.get(f, f)
+[Account faeroey]
+autorefresh = 5
+localrepository = faeroey-local
+remoterepository = faeroey-remote
+postsynchook = ~/.mail/scripts/post-sync-hook.bash ~/.mail/notmuch/faeroey
+
+[Repository faeroey-local]
+type = Maildir
+localfolders = ~/.mail/accounts/faeroey
+sep = /
+nametrans = lambda f: {'inbox':     'INBOX',
+                       'archive':   '[Gmail]/All Mail',
+                       'drafts':    '[Gmail]/Drafts',
+                       'important': '[Gmail]/Important',
+                       'sent':      '[Gmail]/Sent Mail',
+                       'spam':      '[Gmail]/Spam',
+                       'starred':   '[Gmail]/Starred',
+                       'trash':     '[Gmail]/Bin',
+                      }.get(f, f)
+
+[Repository faeroey-remote]
+type = Gmail
+auth_mechanisms = PLAIN
+remoteuser = ahf@faeroey.com
+remotepasseval = get_password('email/ahf@faeroey.com')
+maxconnections = 4
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+realdelete = no
+folderfilter = lambda f: f not in []
+nametrans = lambda f: {'INBOX':             'inbox',
+                       '[Gmail]/All Mail':  'archive',
+                       '[Gmail]/Bin':       'trash',
+                       '[Gmail]/Drafts':    'drafts',
+                       '[Gmail]/Important': 'important',
+                       '[Gmail]/Sent Mail': 'sent',
+                       '[Gmail]/Spam':      'spam',
+                       '[Gmail]/Starred':   'starred',
                       }.get(f, f)

@@ -1,5 +1,6 @@
 # My primary inboxes.
 mailboxes "=0x90/inbox"
+mailboxes "=faeroey/inbox"
 mailboxes "=riseup/inbox"
 mailboxes "=bornhack/inbox"
 
