@@ -1,7 +1,7 @@
 # My primary PGP key. I use one PGP key with all my email addresses added as
 # UID's, but if you have specific keys for specific accounts you might want to
 # look at the various hooks that mutt supports.
-set pgp_default_key="0xBEA7B180B1491921"
+# set pgp_default_key="0xBEA7B180B1491921"
 
 # We use the Qubes split PGP feature, which means we cannot use GPGME. Sadly.
 set crypt_use_gpgme=no

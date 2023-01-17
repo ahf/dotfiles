@@ -1,6 +1,9 @@
 # Set our from to our email address. Our name is handled globally in muttrc.
 set from="ahf@0x90.dk"
 
+# Our signature.
+set signature = "~/.mutt/signature"
+
 # Specify our 0x90 SMTP server.
 set sendmail="/usr/bin/msmtp -a 0x90"
 
@@ -16,9 +19,9 @@ macro index,pager ga "<change-folder>=0x90/archive<enter>" "Go to 0x90 archive"
 macro index,pager gd "<change-folder>=0x90/drafts<enter>"  "Go to 0x90 drafts"
 
 # Archive message.
-macro index,pager e "<save-message>=0x90/archive<enter><enter>" "Save to 0x90 archive"
+macro index,pager e "<tag-thread><tag-prefix><save-message>=0x90/archive<enter><enter>" "Save to 0x90 archive"
 
 # Delete message.
-macro index,pager d "<save-message>=0x90/trash<enter><enter>" "Move message to 0x90 trash"
+macro index,pager d "<tag-thread><tag-prefix><save-message>=0x90/trash<enter><enter>" "Move message to 0x90 trash"
 
 # vim: set ft=neomuttrc :

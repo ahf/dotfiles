@@ -20,6 +20,7 @@ class PasswordManager:
         password = None
 
         self._lock.acquire()
+
         try:
             output = subprocess.check_output("qubes-pass %s" % account, shell=True)
             password = output.splitlines()[0].decode('utf-8')

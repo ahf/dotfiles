@@ -1,6 +1,9 @@
 # Set our from to our email address. Our name is handled globally in muttrc.
 set from="ahf@torproject.org"
 
+# Our signature.
+set signature = "~/.mutt/signature"
+
 # Specify our Riseup SMTP server.
 set sendmail="/usr/bin/msmtp -a riseup"
 
@@ -16,9 +19,9 @@ macro index,pager ga "<change-folder>=riseup/archive<enter>" "Go to Riseup archi
 macro index,pager gd "<change-folder>=riseup/drafts<enter>"  "Go to Riseup drafts"
 
 # Archive message.
-macro index,pager e "<save-message>=riseup/archive<enter><enter>" "Save to Riseup archive"
+macro index,pager e "<tag-thread><tag-prefix><save-message>=riseup/archive<enter><enter>" "Save to Riseup archive"
 
 # Delete message.
-macro index,pager d "<save-message>=riseup/trash<enter><enter>" "Move message to Riseup trash"
+macro index,pager d "<tag-thread><tag-prefix><save-message>=riseup/trash<enter><enter>" "Move message to Riseup trash"
 
 # vim: set ft=muttrc :

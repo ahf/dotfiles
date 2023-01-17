@@ -19,9 +19,9 @@ macro index,pager ga "<change-folder>=bornhack/archive<enter>" "Go to BornHack a
 macro index,pager gd "<change-folder>=bornhack/drafts<enter>"  "Go to BornHack drafts"
 
 # Archive message.
-macro index,pager e "<save-message>=bornhack/archive<enter><enter>" "Save to BornHack archive"
+macro index,pager e "<tag-thread><tag-prefix><save-message>=bornhack/archive<enter><enter>" "Save to BornHack archive"
 
 # Delete message.
-macro index,pager d "<save-message>=bornhack/trash<enter><enter>" "Move message to BornHack trash"
+macro index,pager d "<tag-thread><tag-prefix><save-message>=bornhack/trash<enter><enter>" "Move message to BornHack trash"
 
 # vim: set ft=muttrc :

@@ -1,27 +1,32 @@
+set help=no
+
 set folder = "~/.mail/accounts"
 set spoolfile = "=0x90/inbox"
 
 set mail_check_stats
 set timeout=10
 
-set sidebar_visible=no
-set sidebar_short_path
+set sidebar_visible=yes
 set sidebar_delim_chars="/"
-set sidebar_folder_indent
-set sidebar_indent_string=" "
-set sidebar_new_mail_only=yes
-set sidebar_format = '%B%?F? [%F]?%* %?N?%N/?%S'
-set sidebar_width = 40
+
+set sidebar_folder_indent=no
+set sidebar_indent_string="  "
+set sidebar_short_path=yes
+
+set sidebar_new_mail_only
+set sidebar_sort_method=path
+set sidebar_format =  "%B %?N?(%N)?%* %F/%S"
+set sidebar_width = 30
+
+bind index,pager <C-Up>     sidebar-prev
+bind index,pager <C-Down>   sidebar-next
+bind index,pager <C-Return> sidebar-open
 
 set date_format = "%Y/%m/%d %H:%M"
-#set index_format = "[%Z %?X?A& ?] %-30.30F   %s %*  %D"
-#set index_format = "%Z %?X?A& ?  %-25.25F   %?M?%2M&  ? %s %*  %D"
-set index_format = "%Z %?X?A& ?  %-25.25Fp   %?M?%2M&  ? %s %*  %D"
-
-set status_chars = "-*%A"
-set status_format = "─[ %f (%r) ]─[ %m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set index_format = "%Z %?X?A& ?  %-25.25Fp   %?M?%2M&  ? %s %* %g  %D"
 
 sidebar_whitelist =0x90/inbox
+sidebar_whitelist =faeroey/inbox
 sidebar_whitelist =riseup/inbox
 sidebar_whitelist =bornhack/inbox
 
@@ -33,14 +38,16 @@ set tmpdir = ~/.mutt/temp
 bind index q noop
 bind index x noop
 
+set auto_tag=yes
+set flag_safe=yes
+
+bind index x tag-thread
+
 # Set my name
 set realname = "Alexander Færøy"
 
 # Prepend our signature with "-- \n".
 set sig_dashes
-
-# Our signature.
-set signature=~/.mutt/signature
 
 # Allow us to edit headers when writing an email.
 set edit_headers
@@ -83,23 +90,26 @@ set hidden_host
 
 # Our terminal should be UTF-8 always, but our locale might not be configured
 # correctly.
-set charset = "utf-8"
-
-# US ASCII > ISO-8859-1 > UTF-8 in the mail world :-(
-set send_charset = "us-ascii:iso-8859-1:utf-8"
+set charset="utf-8"
+set send_charset="utf-8"
 
 # Our hostname (or the value on /etc/mailname) is leaked as part of the
 # Message-ID calculation. Hide this detail.
-set hostname = localhost
+set hostname=localhost
 
 set delete=yes
 
 # NM
-# bind index,pager x change-vfolder
+bind index,pager X change-vfolder
 
 # virtual-mailboxes "inbox" "notmuch://?query=tag:inbox"
 # virtual-mailboxes "tor" "notmuch://?query=tag:tor"
 # virtual-mailboxes "bornhack" "notmuch://?query=tag:bornhack"
+
+named-mailboxes "0x90" =0x90/inbox
+named-mailboxes "Faeroey" =faeroey/inbox
+named-mailboxes "Tor" =riseup/inbox
+named-mailboxes "BornHack" =bornhack/inbox
 
 #set virtual_spoolfile=yes
 
@@ -107,7 +117,7 @@ set delete=yes
 
 alternative_order text/plain text/enriched text/html
 
-auto_view text/html
+auto_view text/plain text/html
 
 #set reverse_name=yes
 #alternates ^ahf@0x90.dk$ ^ahf@torproject.org$ ^ahf@bornhack.org$
@@ -127,8 +137,8 @@ bind attach <return> view-mailcap
 
 set ts_enabled=yes
 
-# set sort = threads
-# set sort_aux = reverse-last-date-received
+set sort=threads
+set sort_aux=last-date-received
 
 # Load our macros.
 source ~/.mutt/macros
@@ -150,13 +160,41 @@ source ~/.mutt/accounts/0x90
 folder-hook 0x90/*     source ~/.mutt/accounts/0x90
 folder-hook riseup/*   source ~/.mutt/accounts/riseup
 folder-hook bornhack/* source ~/.mutt/accounts/bornhack
+folder-hook faeroey/*  source ~/.mutt/accounts/faeroey
+
 #  We try to see if the email was sent to a commonly used address.
 reply-hook "~C ahf@0x90.dk"        "source ~/.mutt/accounts/0x90"
 reply-hook "~C ahf@torproject.org" "source ~/.mutt/accounts/riseup"
 reply-hook "~C ahf@bornhack.org"   "source ~/.mutt/accounts/bornhack"
+reply-hook "~C ahf@faeroey.com"    "source ~/.mutt/accounts/faeroey"
+
 #  We try to see, when replying, if we can detect which account it was delivered to.
 reply-hook '~h "Delivered-To: ahf@0x90.dk"'          "source ~/.mutt/accounts/0x90"
 reply-hook '~h "Delivered-To: ahfaeroey@riseup.net"' "source ~/.mutt/accounts/riseup"
 reply-hook '~h "Delivered-To: ahf@bornhack.org"'     "source ~/.mutt/accounts/bornhack"
+reply-hook '~h "Delivered-To: ahf@faeroey.com"'      "source ~/.mutt/accounts/faeroey"
+
+macro index,pager u "<save-message>"
+
+#save-hook '~C ahf@0x90.dk' ~/Mail/to-0x90
+#save-hook '~C ahf@bornhack.org' ~/Mail/to-bh
+
+index-format-hook account '~h "Delivered-To: ahf@0x90.dk"' 0x90
+index-format-hook account '~h "Delivered-To: ahfaeroey@riseup.net"' riseup
+index-format-hook account '~h "Delivered-To: ahf@bornhack.org"' bornhack
+index-format-hook account '~h "Delivered-To: ahf@faeroey.com"' faeroey
+index-format-hook account . "NONE"
+
+save-hook . "=%@account@/archive"
+
+#save-hook '~h "Delivered-To: ahf@0x90.dk"' ~/Mail/$my_foobar
+#save-hook '~h "Delivered-To: ahfaeroey@riseup.net"' ~/Mail/$my_foobar
+#save-hook '~h "Delivered-To: ahf@bornhack.org"' ~/Mail/$my_foobar
+
+bind index,pager x vfolder-from-query
+bind index,pager + entire-thread
+
+set status_chars = "-*%A"
+set status_format = "─[ %f (%r) ]─[ %m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
 
 # vim: set ft=neomuttrc :

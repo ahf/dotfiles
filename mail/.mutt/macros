@@ -13,4 +13,8 @@ bind index,pager a group-reply
 # Ctrl+r: Reload our config.
 macro index,browser \Cr "<enter-command>source ~/.mutt/muttrc<enter>" "Reload Mutt config"
 
+# Arrow up and arrow down shouldn't skip deleted mails.
+bind index,pager <up> previous-entry
+bind index,pager <down> next-entry
+
 # vim: set ft=neomuttrc :

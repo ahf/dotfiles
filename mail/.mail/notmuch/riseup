@@ -1,55 +1,55 @@
 # Handle inbox, archive, spam, draft, trash.
-+archive -inbox  -- folder:riseup/archive
--archive +inbox  -- folder:riseup/inbox
--archive +drafts -- folder:riseup/drafts
--archive +trash  -- folder:riseup/trash
--archive +spam   -- folder:riseup/spam
++inbox   -- folder:riseup/inbox
++archive -- folder:riseup/archive
++drafts  -- folder:riseup/drafts
++trash   -- folder:riseup/trash
++spam    -- folder:riseup/spam
 
 # Issues.
--archive +issues -- folder:riseup/issues/tor/coverity
--archive +issues -- folder:riseup/issues/tor/github
--archive +issues -- folder:riseup/issues/tor/gitlab
--archive +issues -- folder:riseup/issues/tor/hackerone
--archive +issues -- folder:riseup/issues/tor-trac
--archive +issues -- folder:riseup/issues/tor/trac
--archive +issues -- folder:riseup/issues/tor/travis
++issues -- folder:riseup/issues/tor/coverity
++issues -- folder:riseup/issues/tor/github
++issues -- folder:riseup/issues/tor/gitlab
++issues -- folder:riseup/issues/tor/hackerone
++issues -- folder:riseup/issues/tor-trac
++issues -- folder:riseup/issues/tor/trac
++issues -- folder:riseup/issues/tor/travis
 
 # Cryptoparty.
--archive +cryptoparty -- folder:riseup/lists/misc/cryptoparty-sthlm
++cryptoparty -- folder:riseup/lists/misc/cryptoparty-sthlm
 
 # OONI.
--archive +ooni +ooni-dev  -- folder:riseup/lists/ooni/ooni-dev
--archive +ooni +ooni-talk -- folder:riseup/lists/ooni/ooni-talk
++ooni +ooni-dev  -- folder:riseup/lists/ooni/ooni-dev
++ooni +ooni-talk -- folder:riseup/lists/ooni/ooni-talk
 
 # Riseup.
--archive +riseup -- folder:riseup/lists/riseup/protectourspaces
++riseup -- folder:riseup/lists/riseup/protectourspaces
 
 # The Guardian Project.
--archive +tor +guardianproject-pluto -- folder:riseup/lists/tor/guardianproject-pluto
++tor +guardianproject-pluto -- folder:riseup/lists/tor/guardianproject-pluto
 
 # Tor.
--archive +tor +community-council     -- folder:riseup/lists/tor/community-council
--archive +tor +membership-advisors   -- folder:riseup/lists/tor/membership-advisors
--archive +tor +network-team          -- folder:riseup/lists/tor/network-team
--archive +tor +network-team-security -- folder:riseup/lists/tor/network-team-security
--archive +tor +tor-announce          -- folder:riseup/lists/tor/tor-announce
--archive +tor +tor-bsd               -- folder:riseup/lists/tor/tor-bsd
--archive +tor +tor-dev               -- folder:riseup/lists/tor/tor-dev
--archive +tor +tor-employees         -- folder:riseup/lists/tor/tor-employees
--archive +tor +tor-internal          -- folder:riseup/lists/tor/tor-internal
--archive +tor +tor-meeting           -- folder:riseup/lists/tor/tor-meeting
--archive +tor +tor-news              -- folder:riseup/lists/tor/tor-news
--archive +tor +tor-onions            -- folder:riseup/lists/tor/tor-onions
--archive +tor +tor-project           -- folder:riseup/lists/tor/tor-project
--archive +tor +tor-relays            -- folder:riseup/lists/tor/tor-relays
--archive +tor +tor-reports           -- folder:riseup/lists/tor/tor-reports
--archive +tor +tor-researchers       -- folder:riseup/lists/tor/tor-researchers
--archive +tor +tor-scaling           -- folder:riseup/lists/tor/tor-scaling
--archive +tor +tor-talk              -- folder:riseup/lists/tor/tor-talk
--archive +tor +tor-teachers          -- folder:riseup/lists/tor/tor-teachers
--archive +tor +tor-team              -- folder:riseup/lists/tor/tor-team
--archive +tor +tor-ux                -- folder:riseup/lists/tor/tor-ux
--archive +tor +vegas-leads           -- folder:riseup/lists/tor/vegas-leads
++tor +community-council     -- folder:riseup/lists/tor/community-council
++tor +membership-advisors   -- folder:riseup/lists/tor/membership-advisors
++tor +network-team          -- folder:riseup/lists/tor/network-team
++tor +network-team-security -- folder:riseup/lists/tor/network-team-security
++tor +tor-announce          -- folder:riseup/lists/tor/tor-announce
++tor +tor-bsd               -- folder:riseup/lists/tor/tor-bsd
++tor +tor-dev               -- folder:riseup/lists/tor/tor-dev
++tor +tor-employees         -- folder:riseup/lists/tor/tor-employees
++tor +tor-internal          -- folder:riseup/lists/tor/tor-internal
++tor +tor-meeting           -- folder:riseup/lists/tor/tor-meeting
++tor +tor-news              -- folder:riseup/lists/tor/tor-news
++tor +tor-onions            -- folder:riseup/lists/tor/tor-onions
++tor +tor-project           -- folder:riseup/lists/tor/tor-project
++tor +tor-relays            -- folder:riseup/lists/tor/tor-relays
++tor +tor-reports           -- folder:riseup/lists/tor/tor-reports
++tor +tor-researchers       -- folder:riseup/lists/tor/tor-researchers
++tor +tor-scaling           -- folder:riseup/lists/tor/tor-scaling
++tor +tor-talk              -- folder:riseup/lists/tor/tor-talk
++tor +tor-teachers          -- folder:riseup/lists/tor/tor-teachers
++tor +tor-team              -- folder:riseup/lists/tor/tor-team
++tor +tor-ux                -- folder:riseup/lists/tor/tor-ux
++tor +vegas-leads           -- folder:riseup/lists/tor/vegas-leads
 
 # Tor Bugs.
--archive +tor-bugs -- folder:riseup/lists/tor/tor-bugs
++tor-bugs -- folder:riseup/lists/tor/tor-bugs

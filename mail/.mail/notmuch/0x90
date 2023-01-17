@@ -1,117 +1,117 @@
 # Handle inbox, archive, spam, draft, trash.
-+archive -inbox  -- folder:0x90/archive
--archive +inbox  -- folder:0x90/inbox
--archive +drafts -- folder:0x90/drafts
--archive +trash  -- folder:0x90/trash
--archive +spam   -- folder:0x90/spam
++inbox   -- folder:0x90/inbox
++archive -- folder:0x90/inbox
++drafts  -- folder:0x90/drafts
++trash   -- folder:0x90/trash
++spam    -- folder:0x90/spam
 
 # BSD-dk.
--archive +bsd-dk -- folder:0x90/lists/bsd-dk/announce
--archive +bsd-dk -- folder:0x90/lists/bsd-dk/bestyrelsen
--archive +bsd-dk -- folder:0x90/lists/bsd-dk/bsd-dk
++bsd-dk -- folder:0x90/lists/bsd-dk/announce
++bsd-dk -- folder:0x90/lists/bsd-dk/bestyrelsen
++bsd-dk -- folder:0x90/lists/bsd-dk/bsd-dk
 
 # CCC.
--archive +ccc +34c3-content    -- folder:0x90/lists/ccc/34c3-content
--archive +ccc +34c3-resilience -- folder:0x90/lists/ccc/34c3-resilience
++ccc +34c3-content    -- folder:0x90/lists/ccc/34c3-content
++ccc +34c3-resilience -- folder:0x90/lists/ccc/34c3-resilience
 
 # Crypto.
--archive +crypto +algorithms -- folder:0x90/lists/crypto/algorithms
--archive +crypto +cabforum-pub -- folder:0x90/lists/crypto/cabforum-pub
--archive +crypto +competitions -- folder:0x90/lists/crypto/competitions
--archive +crypto +curves -- folder:0x90/lists/crypto/curves
--archive +crypto +messaging -- folder:0x90/lists/crypto/messaging
--archive +crypto +noise -- folder:0x90/lists/crypto/noise
--archive +crypto +snakeoil -- folder:0x90/lists/crypto/snakeoil
++crypto +algorithms -- folder:0x90/lists/crypto/algorithms
++crypto +cabforum-pub -- folder:0x90/lists/crypto/cabforum-pub
++crypto +competitions -- folder:0x90/lists/crypto/competitions
++crypto +curves -- folder:0x90/lists/crypto/curves
++crypto +messaging -- folder:0x90/lists/crypto/messaging
++crypto +noise -- folder:0x90/lists/crypto/noise
++crypto +snakeoil -- folder:0x90/lists/crypto/snakeoil
 
 # NIST.
--archive +nist +pqc-forum -- folder:0x90/lists/nist/pqc-forum
++nist +pqc-forum -- folder:0x90/lists/nist/pqc-forum
 
 # Debian.
--archive +debian +debian-security -- folder:0x90/lists/debian/debian-security
++debian +debian-security -- folder:0x90/lists/debian/debian-security
 
 # IETF.
--archive +ietf +ietf-announce -- folder:0x90/lists/ietf/announce
--archive +ietf +dns-privacy   -- folder:0x90/lists/ietf/dns-privacy
--archive +ietf +hrpc          -- folder:0x90/lists/ietf/hrpc
--archive +ietf +mls           -- folder:0x90/lists/ietf/mls
--archive +ietf +quic          -- folder:0x90/lists/ietf/quic
--archive +ietf +tls           -- folder:0x90/lists/ietf/tls
++ietf +ietf-announce -- folder:0x90/lists/ietf/announce
++ietf +dns-privacy   -- folder:0x90/lists/ietf/dns-privacy
++ietf +hrpc          -- folder:0x90/lists/ietf/hrpc
++ietf +mls           -- folder:0x90/lists/ietf/mls
++ietf +quic          -- folder:0x90/lists/ietf/quic
++ietf +tls           -- folder:0x90/lists/ietf/tls
 
 # IRCsource.
--archive +ircsource +ircsource-admins -- folder:0x90/lists/irc/ircsource-admins
--archive +ircsource +ircsource-opers -- folder:0x90/lists/irc/ircsource-opers
++ircsource +ircsource-admins -- folder:0x90/lists/irc/ircsource-admins
++ircsource +ircsource-opers -- folder:0x90/lists/irc/ircsource-opers
 
 # Irssi.
--archive +irssi +irssi-info         -- folder:0x90/lists/irssi/irssi-info
--archive +irssi +irssi-staff        -- folder:0x90/lists/irssi/irssi-staff
++irssi +irssi-info  -- folder:0x90/lists/irssi/irssi-info
++irssi +irssi-staff -- folder:0x90/lists/irssi/irssi-staff
 
 # Labitat.
--archive +labitat +labitat-discuss -- folder:0x90/lists/labitat/labitat-discuss
--archive +labitat +labitat-members -- folder:0x90/lists/labitat/labitat-members
++labitat +labitat-discuss -- folder:0x90/lists/labitat/labitat-discuss
++labitat +labitat-members -- folder:0x90/lists/labitat/labitat-members
 
 # Cryptoparty.
--archive +cryptoparty-- folder:0x90/lists/misc/cryptoparty-global
++cryptoparty-- folder:0x90/lists/misc/cryptoparty-global
 
 # Traffic Obfuscation.
--archive +tor +traffic-obfuscation -- folder:0x90/lists/misc/traffic-obfuscation
++tor +traffic-obfuscation -- folder:0x90/lists/misc/traffic-obfuscation
 
 # Open Source Days.
--archive +opensourcedays -- folder:0x90/lists/opensourcedays/announce
--archive +opensourcedays -- folder:0x90/lists/opensourcedays/apsbestyr
--archive +opensourcedays -- folder:0x90/lists/opensourcedays/program
--archive +opensourcedays -- folder:0x90/lists/opensourcedays/team
--archive +opensourcedays -- folder:0x90/lists/opensourcedays/ug
++opensourcedays -- folder:0x90/lists/opensourcedays/announce
++opensourcedays -- folder:0x90/lists/opensourcedays/apsbestyr
++opensourcedays -- folder:0x90/lists/opensourcedays/program
++opensourcedays -- folder:0x90/lists/opensourcedays/team
++opensourcedays -- folder:0x90/lists/opensourcedays/ug
 
 # OTR.
--archive +otr +otr-dev   -- folder:0x90/lists/otr/otr-dev
--archive +otr +otr-users -- folder:0x90/lists/otr/otr-users
++otr +otr-dev   -- folder:0x90/lists/otr/otr-dev
++otr +otr-users -- folder:0x90/lists/otr/otr-users
 
 # Qubes.
--archive +qubes +qubes-announce -- folder:0x90/lists/qubes/qubes-announce
--archive +qubes +qubes-devel    -- folder:0x90/lists/qubes/qubes-devel
--archive +qubes +qubes-project  -- folder:0x90/lists/qubes/qubes-project
--archive +qubes +qubes-users    -- folder:0x90/lists/qubes/qubes-users
++qubes +qubes-announce -- folder:0x90/lists/qubes/qubes-announce
++qubes +qubes-devel    -- folder:0x90/lists/qubes/qubes-devel
++qubes +qubes-project  -- folder:0x90/lists/qubes/qubes-project
++qubes +qubes-users    -- folder:0x90/lists/qubes/qubes-users
 
 # SSLUG.
--archive +sslug -- folder:0x90/lists/sslug/bestyrelsen
--archive +sslug -- folder:0x90/lists/sslug/sslug-announce
++sslug -- folder:0x90/lists/sslug/bestyrelsen
++sslug -- folder:0x90/lists/sslug/sslug-announce
 
 # The Camp.
--archive +thecamp -- folder:0x90/lists/thecamp/announce
--archive +thecamp -- folder:0x90/lists/thecamp/camp
--archive +thecamp -- folder:0x90/lists/thecamp/discuss
--archive +thecamp -- folder:0x90/lists/thecamp/members
--archive +thecamp -- folder:0x90/lists/thecamp/pgm
++thecamp -- folder:0x90/lists/thecamp/announce
++thecamp -- folder:0x90/lists/thecamp/camp
++thecamp -- folder:0x90/lists/thecamp/discuss
++thecamp -- folder:0x90/lists/thecamp/members
++thecamp -- folder:0x90/lists/thecamp/pgm
 
 # Tor.
--archive +tor +tor-announce -- folder:0x90/lists/tor/tor-announce
--archive +tor +tor-dev      -- folder:0x90/lists/tor/tor-dev
--archive +tor +tor-internal -- folder:0x90/lists/tor/tor-internal
--archive +tor +tor-meeting  -- folder:0x90/lists/tor/tor-meeting
--archive +tor +tor-onions   -- folder:0x90/lists/tor/tor-onions
--archive +tor +tor-project  -- folder:0x90/lists/tor/tor-project
--archive +tor +tor-relays   -- folder:0x90/lists/tor/tor-relays
--archive +tor +tor-talk     -- folder:0x90/lists/tor/tor-talk
--archive +tor +tor-teachers -- folder:0x90/lists/tor/tor-teachers
--archive +tor +tor-team     -- folder:0x90/lists/tor/tor-team
++tor +tor-announce -- folder:0x90/lists/tor/tor-announce
++tor +tor-dev      -- folder:0x90/lists/tor/tor-dev
++tor +tor-internal -- folder:0x90/lists/tor/tor-internal
++tor +tor-meeting  -- folder:0x90/lists/tor/tor-meeting
++tor +tor-onions   -- folder:0x90/lists/tor/tor-onions
++tor +tor-project  -- folder:0x90/lists/tor/tor-project
++tor +tor-relays   -- folder:0x90/lists/tor/tor-relays
++tor +tor-talk     -- folder:0x90/lists/tor/tor-talk
++tor +tor-teachers -- folder:0x90/lists/tor/tor-teachers
++tor +tor-team     -- folder:0x90/lists/tor/tor-team
 
 # Issues.
--archive +issues -- folder:0x90/services/github
--archive +issues -- folder:0x90/services/gitlab
--archive +issues -- folder:0x90/lists/irssi/irssi-scripts-bugs
--archive +issues -- folder:0x90/lists/irssi/irssi-bugs
++issues -- folder:0x90/services/github
++issues -- folder:0x90/services/gitlab
++issues -- folder:0x90/lists/irssi/irssi-scripts-bugs
++issues -- folder:0x90/lists/irssi/irssi-bugs
 
 # Misc.
--archive +announce-opensource-dk -- folder:0x90/lists/misc/announce-opensource-dk
--archive +bitsters               -- folder:0x90/lists/misc/bitsters
--archive +dfri                   -- folder:0x90/lists/misc/dfri
--archive +dnssec-tools-users     -- folder:0x90/lists/misc/dnssec-tools-users
--archive +driving-it             -- folder:0x90/lists/misc/driving-it
--archive +erlang-questions       -- folder:0x90/lists/misc/erlang-questions
--archive +fosdem                 -- folder:0x90/lists/misc/fosdem
--archive +freedomnotfear         -- folder:0x90/lists/misc/freedomnotfear
--archive +irc6-team              -- folder:0x90/lists/irc/irc6-team
--archive +ircd-ratbox            -- folder:0x90/lists/irc/ircd-ratbox
--archive +ircnet-opers           -- folder:0x90/lists/irc/ircnet-opers
--archive +marrakesh              -- folder:0x90/lists/misc/marrakesh
--archive +secure-desktops        -- folder:0x90/lists/misc/secure-desktops
++announce-opensource-dk -- folder:0x90/lists/misc/announce-opensource-dk
++bitsters               -- folder:0x90/lists/misc/bitsters
++dfri                   -- folder:0x90/lists/misc/dfri
++dnssec-tools-users     -- folder:0x90/lists/misc/dnssec-tools-users
++driving-it             -- folder:0x90/lists/misc/driving-it
++erlang-questions       -- folder:0x90/lists/misc/erlang-questions
++fosdem                 -- folder:0x90/lists/misc/fosdem
++freedomnotfear         -- folder:0x90/lists/misc/freedomnotfear
++irc6-team              -- folder:0x90/lists/irc/irc6-team
++ircd-ratbox            -- folder:0x90/lists/irc/ircd-ratbox
++ircnet-opers           -- folder:0x90/lists/irc/ircnet-opers
++marrakesh              -- folder:0x90/lists/misc/marrakesh
++secure-desktops        -- folder:0x90/lists/misc/secure-desktops

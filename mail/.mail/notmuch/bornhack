@@ -1,6 +1,6 @@
 # Handle inbox, archive, spam, draft, trash.
-+archive -inbox  -- folder:bornhack/archive
--archive +inbox  -- folder:bornhack/inbox
--archive +drafts -- folder:bornhack/drafts
--archive +trash  -- folder:bornhack/trash
--archive +spam   -- folder:bornhack/spam
++inbox   -- folder:bornhack/inbox
++archive -- folder:bornhack/archive
++drafts  -- folder:bornhack/drafts
++trash   -- folder:bornhack/trash
++spam    -- folder:bornhack/spam

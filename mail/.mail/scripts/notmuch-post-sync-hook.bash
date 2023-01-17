@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-notmuch new --quiet
+notmuch new
 
-if [[ -f "$@" ]] ; then
-    notmuch tag --batch --input="$@"
-fi
+# if [[ -f "$@" ]] ; then
+#     notmuch tag --batch --input="$@"
+# fi

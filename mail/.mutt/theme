@@ -20,8 +20,14 @@ color   quoted1     color25  color232
 color   quoted2     color207 color232
 
 
-color index_date  color10 color232
-color index_size  color10 color232
+color index_date  color240 color232
+color index_size  color240 color232
+
 color index_flags default red '~F'
+
+color index_collapsed color63 color232
+
+#color index_subject white color232 "~R"
+#color index_subject color202 color232 "~U"
 
 # vim: set ft=neomuttrc :
