@@ -49,3 +49,6 @@
 [submodule "vim/.vim/pack/ahf/start/calendar-vim"]
 	path = vim/.vim/pack/ahf/start/calendar-vim
 	url = https://github.com/mattn/calendar-vim.git
+[submodule "vim/.vim/pack/ahf/start/ale"]
+	path = vim/.vim/pack/ahf/start/ale
+	url = https://github.com/dense-analysis/ale.git

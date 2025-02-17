@@ -1,14 +1,14 @@
 #
-# Alexander Færøy <ahf@0x90.dk>
+# Alexander Hansen Færøy <ahf@0x90.dk>
 # PGP: 0x61A208E16E7CB435
 #
 # Git Configuration File.
 #
-# Most recent update: 2020/12/05 23:05:38
+# Most recent update: 2025/02/17 17:57:10
 #
 
 [user]
-    name = Alexander Færøy
+    name = Alexander Hansen Færøy
     email = ahf@0x90.dk
 
 [includeIf "gitdir:~/src/*.torproject.org/"]
