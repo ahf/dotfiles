@@ -55,6 +55,7 @@
     from = Alexander Færøy <ahf@0x90.dk>
     smtpserver = /usr/bin/msmtp
     confirm = auto
+    annotate = yes
 
 [alias]
     push-all = !/home/user/.local/bin/git-push-all.sh
