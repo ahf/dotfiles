@@ -74,3 +74,6 @@
 
 [absorb]
     maxStack = 50
+
+[rerere]
+    enabled = 1
